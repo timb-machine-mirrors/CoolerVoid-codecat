@@ -1,0 +1,39 @@
+{% extends "AuthAdmin.html" %}
+{% block content %}
+ <center>
+  <form action="/front/auth/rules/delete" method="post">
+<div align="center">
+ <div class="col-md-5">
+    {{ form.csrf_token }}
+ <div class="form-label-group">
+        <label for="id">Rule ID to remove </label>	<input type="text" id="name" class="form-control" placeholder="id" required="required"  name="id" autofocus="autofocus">
+   <br>
+ <button class="btn btn-sm btn-success" type="submit">Delete Rule from database</button>  
+</div>
+<br>
+  </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+ 
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                Success!  {{ message[1]|safe }}
+                </div>
+            {% endif %}
+ 
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1]|safe }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}   
+  </div>
+  </form>
+     <br><br><br><br><br><br>
+	<br> 
+
+ </center>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "AuthAdmin.html" %}
+{% block content %}
+ <center>
+  <form action="/front/auth/rules/insert" method="post">
+<div align="center">
+ <div class="col-md-6">
+    {{ form.csrf_token }}
+
+ <div class="form-label-group">
+    	<label for="title">Title</label><input type="text" id="title" class="form-control" placeholder="title" required="required"  name="title" autofocus="autofocus">
+
+ <div class="form-label-group">
+         <label for="description">Description:</label>   	<textarea rows="6" cols="60" type="text" id="description" class="form-control" placeholder="description" name="description" autofocus="autofocus">Put description of warning or vuln here.</textarea>
+ </div>
+<br>
+ <div class="form-label-group">
+    	<label for="lang">Language</label> 
+	<select name="lang">
+  		<option value="python">Python</option>
+  		<option value="c" selected>C</option>
+  		<option value="cpp">C++</option>
+  		<option value="java">Java</option>
+  		<option value="php">PHP</option>
+  		<option value="asp">ASP</option>
+  		<option value="ruby">Ruby</option>
+                <option value="go">Go</option>
+                <option value="javascript">Javascript</option>
+	</select>
+ </div>
+<br>
+
+ <div class="form-label-group">
+    	<label for="level">Impact</label> 
+	<select name="level">
+  		<option value="high">High</option>
+  		<option value="medium" selected>Medium</option>
+  		<option value="low">Low</option>
+	</select>
+ </div>
+
+ <div class="form-label-group">
+    	<label for="match1">match1</label><input type="text" id="match1" class="form-control" placeholder="match1" required="required"  name="match1" autofocus="autofocus">
+</div>
+
+ <div class="form-label-group">
+    	<label for="match2">match2</label><input type="text" id="match2" class="form-control" placeholder="match2" required="required"  name="match2" autofocus="autofocus">         
+</div>
+
+         
+</div>
+
+
+
+ <div class="form-label-group">
+<br>
+ <button class="btn btn-sm btn-success" type="submit">Insert Rule in database</button>	
+</div>
+<br>
+  </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+ 
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                Success! {{ message[1]|safe }}
+                </div>
+            {% endif %}
+ 
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1]|safe }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}   
+  </div>
+
+  </form>
+	<br> 
+
+</center> 
+{% endblock %}
+

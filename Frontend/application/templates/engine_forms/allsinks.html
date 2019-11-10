@@ -1,0 +1,61 @@
+{% extends "AuthAdmin.html" %}
+{% block content %}
+ <center>
+  <form action="/front/auth/engine/allsinks" method="post">
+<div align="center">
+ <div class="col-md-6">
+    {{ form.csrf_token }}
+
+ <div class="form-label-group">
+    	<label for="path">Path of project</label><input type="text" id="path" class="form-control" placeholder="path" required="required"  name="path" autofocus="autofocus">
+ </div>
+
+<br>
+ <div class="form-label-group">
+    	<label for="lang">Language</label> 
+	<select name="lang">
+  		<option value="python">Python</option>
+  		<option value="c" selected>C</option>
+  		<option value="cpp">C++</option>
+  		<option value="java">Java</option>
+  		<option value="php">PHP</option>
+  		<option value="asp">ASP</option>
+  		<option value="ruby">Ruby</option>
+                <option value="go">Go</option>
+                <option value="javascript">Javascript</option>
+	</select>
+ </div>
+<br>
+ <div class="form-label-group">
+<br>
+ <button class="btn btn-sm btn-success" type="submit">Search all sinks</button>	
+</div>
+<br>
+  </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+ 
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                Success! {{ message[1]|safe }}
+                </div>
+            {% endif %}
+ 
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1]|safe }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+	{% endwith %}
+  </div>
+
+  </form>
+	<br> 
+
+</center> 
+{% endblock %}
+

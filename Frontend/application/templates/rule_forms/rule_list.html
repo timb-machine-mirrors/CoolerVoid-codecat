@@ -1,0 +1,58 @@
+{% extends "AuthAdmin.html" %}
+
+    {% block content %}
+
+        
+	<div class="card-body">
+
+	<div class="table-responsive">
+                <table class="display" id="dataTable" width="100%" border="1" cellpadding="100">
+                  <thead align="center">
+                    <tr>
+                      <th>ID</th>
+                      <th>language</th>
+                      <th>title</th>
+                      <th>impact</th>
+                      <th>Created at</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tfoot align="center">
+                    <tr>
+                      <th>ID</th>
+                      <th>language</th>
+                      <th>title</th>
+                      <th>impact</th>
+                      <th>Created at</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </tfoot>
+                <tbody align="center">
+                {% for item in rules %}
+                    <tr>
+                      <td>{{ item.id  }}</td>
+                      <td>{{ item.lang }}</td>
+                      <td>{{ item.title }}</td>
+                      <td>{{ item.level }}</td>
+                      <td>{{ item.created_at }}</td>
+                      <td> <a href="/front/auth/rules/update/{{ item.id }}">
+				<input type="image"  border=""  src="{{ url_for('static', filename='img/application.ico') }}" alt="" width="28" height="28" />
+			   </a></td>
+ 		      <td>
+				<form  method="post" action="/front/auth/rules/delete">
+		      		{{ form.csrf_token }}
+                  		<input type="hidden" name="id" value="{{ item.id }}" />
+                  		<center>
+				<input type="image"  border=""  src="{{ url_for('static', filename='img/delete.ico') }}" alt="" width="28" height="28" />
+		   		</center>
+                  		</form> 
+		      </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+	</div>
+    {% endblock %}

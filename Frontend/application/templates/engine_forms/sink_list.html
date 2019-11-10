@@ -1,0 +1,56 @@
+{% extends "AuthAdmin.html" %}
+
+    {% block content %}
+
+        
+	<div class="card-body">
+
+	<div class="table-responsive">
+                <table class="display" id="dataTable" width="100%" border="1" cellpadding="100">
+                  <thead align="center">
+                    <tr>
+                      <th>Rule_ID</th>
+                      <th>Title</th>
+                      <th>Path</th>
+                      <th>Lines</th>
+		      <th>Ext</th>
+		      <th>View</th>
+                    </tr>
+                  </thead>
+                  <tfoot align="center">
+                    <tr>
+                      <th>Rule_ID</th>
+                      <th>Title</th>
+                      <th>Path</th>
+                      <th>Lines</th>
+		      <th>Ext</th>
+		      <th>View</th>
+                    </tr>
+                  </tfoot>
+                <tbody align="center">
+                {% for item in elements %}
+                    <tr>
+			    <td><a href="/front/auth/rules/update/{{ item.rule_id }}">{{ item.rule_id  }}</a></td>
+                      <td>{{ item.title }}</td>
+                      <td>{{ item.path }}</td>
+                      <td>{{ item.lines }}</td>
+		      <td>{{ item.lang  }}</td> 
+ 		      <td>
+				<form  method="post" action="/front/auth/engine/open_code">
+                  		<input type="hidden" name="path" value="{{ item.path }}" />
+                  		<input type="hidden" name="lines" value="{{ item.lines }}" />
+                  		<input type="hidden" name="lang" value="{{ item.lang }}" />
+                  		<center>
+				<input type="image"  border=""  src="{{ url_for('static', filename='img/export.ico') }}" alt="" width="28" height="28" formtarget="_blank"/>
+		   		</center>
+                  		</form> 
+		      </td>
+
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+	</div>
+    {% endblock %}
