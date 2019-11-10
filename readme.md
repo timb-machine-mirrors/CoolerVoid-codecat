@@ -1,7 +1,8 @@
 # CodeCat - Tool to help in codereview 
 
 
-CodeCat is a open source tool to help you in codereview, to find sinks and this points follow regex rules...
+CodeCat is a open source tool to help you in codereview, to find/track sinks and this points follow regex rules...
+<img align="right" width="240" height="220" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/codecat00.png">
 
 
 
