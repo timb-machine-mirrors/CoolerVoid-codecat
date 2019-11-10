@@ -22,7 +22,7 @@ Run backend and frontend...
 $ cd Codecat
 $ cd Frontend; python3 wsgi.py &
 $ cd ..
-$ cd backend; python3 wsgi.py &
+$ cd Backend; python3 wsgi.py &
 ```
 
 Next step you need save your user to login:
