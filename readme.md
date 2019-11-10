@@ -37,8 +37,15 @@ This end point /api/users, run only one time in first deploy, if you try to send
 Go to this following "https://127.0.0.1:9093/front/auth/".
 Now you can enter in this system auth, use login "admin", pass "rubrik123".
 
+*Note About TLS:* You can configure and load your TLS cert in "wsgi.py".
 
-Note: You can load your TLS cert in "wsgi.py".
+
+## How you can use it ?
+Please study the doc.
+https://github.com/CoolerVoid/codecat/blob/master/doc/raptor.pdf
+
+
+
 
 
 
