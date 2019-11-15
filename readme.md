@@ -1,7 +1,8 @@
 # CodeCat - Tool to help in codereview 
 
 
-CodeCat is a open source tool to help you in codereview, to find sinks and this points follow regex rules...
+CodeCat is a open source tool to help you in codereview, to find/track sinks and this points follow regex rules...
+<img align="right" width="240" height="220" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/codecat00.png">
 
 
 
@@ -21,7 +22,7 @@ Run backend and frontend...
 $ cd Codecat
 $ cd Frontend; python3 wsgi.py &
 $ cd ..
-$ cd backend; python3 wsgi.py &
+$ cd Backend; python3 wsgi.py &
 ```
 
 Next step you need save your user to login:
@@ -36,8 +37,15 @@ This end point /api/users, run only one time in first deploy, if you try to send
 Go to this following "https://127.0.0.1:9093/front/auth/".
 Now you can enter in this system auth, use login "admin", pass "rubrik123".
 
+*Note About TLS:* You can configure and load your TLS cert in "wsgi.py".
 
-Note: You can load your TLS cert in "wsgi.py".
+
+## How you can use it ?
+Please study the doc.
+https://github.com/CoolerVoid/codecat/blob/master/doc/raptor.pdf
+
+
+
 
 
 
