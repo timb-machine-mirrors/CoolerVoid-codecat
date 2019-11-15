@@ -120,7 +120,6 @@ def update_rule(rule_id):
 
     class TheForm(Form): 
         title = TextField('title:', validators=[validators.required(), validators.Length(min=6, max=512)])
-        lang = TextField('lang:', validators=[validators.required(), validators.Length(min=6, max=512)])
         class Meta:
             csrf = True
             csrf_class = tokenform.Ice_CSRF
@@ -140,6 +139,7 @@ def update_rule(rule_id):
                     flash('Error: form token invalid try to post again')
                 else:
                     d={}
+                    d['id']=rule_id
                     d['title']=request.form['title']
                     d['lang']=request.form['lang']
                     d['description']=request.form['description']

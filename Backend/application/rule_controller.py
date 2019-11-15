@@ -83,7 +83,6 @@ def update_rule():
     if request.json.get('description') is not None:
         d['description'] = request.json.get('description') 
 
-
     if request.json.get('level') is not None:
         d['level'] = request.json.get('level')
 
