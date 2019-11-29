@@ -10,7 +10,7 @@ class Ice_CSRF(CSRF):
        if second & 1:
            return min
        else:
-           t=datetime.datetime.now() - datetime.timedelta(minutes=1)
+           t=datetime.datetime.now() - datetime.timedelta(minutes=4)
            return t.minute
 
     def setup_form(self, form):
