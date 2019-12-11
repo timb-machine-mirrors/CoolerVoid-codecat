@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.30)  10 NOV 2019 11:01
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.30)  10 NOV 2019 20:22
->>>>>>> b70501dd34d9fecdda1ae509a521993ffa88888a
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.30)  11 DEC 2019 18:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -998,11 +994,11 @@ Dictionary: translator-theorem-dictionary, Language: English
 ) (./raptor.nav)
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <6> not available
 (Font)              Font shape `LY1/phv/b/n' tried instead on input line 19.
-<images/codecat00.png, id=17, 336.25626pt x 249.93375pt>
-File: images/codecat00.png Graphic file (type png)
-<use images/codecat00.png>
-Package pdftex.def Info: images/codecat00.png  used on input line 21.
-(pdftex.def)             Requested size: 71.13188pt x 52.869pt.
+<images/codecat01.png, id=17, 923.45pt x 1240.635pt>
+File: images/codecat01.png Graphic file (type png)
+<use images/codecat01.png>
+Package pdftex.def Info: images/codecat01.png  used on input line 21.
+(pdftex.def)             Requested size: 71.13188pt x 95.56137pt.
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <4> not available
 (Font)              Font shape `LY1/phv/b/n' tried instead on input line 21.
  [1
@@ -1017,7 +1013,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./
-images/codecat00.png>]
+images/codecat01.png>]
 LaTeX Font Info:    Try loading font information for U+msa on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1047,10 +1043,10 @@ Package pdftex.def Info: images/tony.jpeg  used on input line 36.
 <images/diagram0.png, id=62, 443.6575pt x 379.4175pt>
 File: images/diagram0.png Graphic file (type png)
 <use images/diagram0.png>
-Package pdftex.def Info: images/diagram0.png  used on input line 92.
+Package pdftex.def Info: images/diagram0.png  used on input line 93.
 (pdftex.def)             Requested size: 256.0748pt x 218.99124pt.
 
-Overfull \vbox (4.5751pt too high) detected at line 92
+Overfull \vbox (4.5751pt too high) detected at line 93
  []
 
 [7
@@ -1059,31 +1055,31 @@ Overfull \vbox (4.5751pt too high) detected at line 92
 <images/menu1.png, id=71, 230.8625pt x 386.44376pt>
 File: images/menu1.png Graphic file (type png)
 <use images/menu1.png>
-Package pdftex.def Info: images/menu1.png  used on input line 102.
+Package pdftex.def Info: images/menu1.png  used on input line 103.
 (pdftex.def)             Requested size: 56.9055pt x 95.25447pt.
  [8
 
  <./images/menu1.png>]
-<images/insertrule2.png, id=79, 794.97pt x 454.69875pt>
+<images/insertrule2.png, id=79, 866.23625pt x 440.64626pt>
 File: images/insertrule2.png Graphic file (type png)
 <use images/insertrule2.png>
-Package pdftex.def Info: images/insertrule2.png  used on input line 111.
-(pdftex.def)             Requested size: 256.0748pt x 146.47096pt.
+Package pdftex.def Info: images/insertrule2.png  used on input line 112.
+(pdftex.def)             Requested size: 256.0748pt x 130.25845pt.
  [9
 
  <./images/insertrule2.png>]
-<images/insertrule.png, id=87, 790.955pt x 490.83376pt>
+<images/insertrule.png, id=87, 809.0225pt x 511.9125pt>
 File: images/insertrule.png Graphic file (type png)
 <use images/insertrule.png>
-Package pdftex.def Info: images/insertrule.png  used on input line 120.
-(pdftex.def)             Requested size: 256.0748pt x 158.91243pt.
+Package pdftex.def Info: images/insertrule.png  used on input line 121.
+(pdftex.def)             Requested size: 256.0748pt x 162.03441pt.
  [10
 
  <./images/insertrule.png>]
 <images/allsinks.png, id=95, 931.48pt x 393.47pt>
 File: images/allsinks.png Graphic file (type png)
 <use images/allsinks.png>
-Package pdftex.def Info: images/allsinks.png  used on input line 130.
+Package pdftex.def Info: images/allsinks.png  used on input line 131.
 (pdftex.def)             Requested size: 256.0748pt x 108.16554pt.
  [11
 
@@ -1091,10 +1087,10 @@ Package pdftex.def Info: images/allsinks.png  used on input line 130.
 <images/cache.png, id=103, 1104.125pt x 407.5225pt>
 File: images/cache.png Graphic file (type png)
 <use images/cache.png>
-Package pdftex.def Info: images/cache.png  used on input line 139.
+Package pdftex.def Info: images/cache.png  used on input line 140.
 (pdftex.def)             Requested size: 312.9803pt x 115.51706pt.
 
-Overfull \hbox (27.59048pt too wide) in paragraph at lines 139--139
+Overfull \hbox (27.59048pt too wide) in paragraph at lines 140--140
 []  
  []
 
@@ -1104,7 +1100,7 @@ Overfull \hbox (27.59048pt too wide) in paragraph at lines 139--139
 <images/codeview.png, id=111, 653.44125pt x 420.57124pt>
 File: images/codeview.png Graphic file (type png)
 <use images/codeview.png>
-Package pdftex.def Info: images/codeview.png  used on input line 148.
+Package pdftex.def Info: images/codeview.png  used on input line 149.
 (pdftex.def)             Requested size: 256.0748pt x 164.81146pt.
 
 
@@ -1114,16 +1110,16 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.148 \end{frame}
+l.149 \end{frame}
                  
 ? 
 [13
 
  <./images/codeview.png>]
-File: images/codecat00.png Graphic file (type png)
-<use images/codecat00.png>
-Package pdftex.def Info: images/codecat00.png  used on input line 157.
-(pdftex.def)             Requested size: 142.26378pt x 105.74182pt.
+File: images/codecat01.png Graphic file (type png)
+<use images/codecat01.png>
+Package pdftex.def Info: images/codecat01.png  used on input line 158.
+(pdftex.def)             Requested size: 142.26378pt x 191.12274pt.
  [14
 
 ] [15
@@ -1140,31 +1136,27 @@ Package pdftex.def Info: images/codecat00.png  used on input line 157.
 \tf@snm=\write8
 \openout8 = `raptor.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
  (./raptor.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
 Package rerunfilecheck Info: File `raptor.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  20558 strings out of 492982
- 370973 string characters out of 6134896
- 469726 words of memory out of 5000000
+ 370973 string characters out of 11884896
+ 12465726 words of memory out of 17000000
  23602 multiletter control sequences out of 15000+600000
- 20496 words of font info for 42 fonts, out of 8000000 for 9000
+ 20496 words of font info for 42 fonts, out of 12000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,15n,59p,819b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,15n,59p,819b,504s stack positions out of 5000i,500n,10000p,12000000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/helvetic/uhvr8a.pfb>
-<<<<<<< HEAD
-Output written on raptor.pdf (16 pages, 237655 bytes).
-=======
-Output written on raptor.pdf (16 pages, 237654 bytes).
->>>>>>> b70501dd34d9fecdda1ae509a521993ffa88888a
+Output written on raptor.pdf (16 pages, 324131 bytes).
 PDF statistics:
  159 PDF objects out of 1000 (max. 8388607)
  107 compressed objects within 2 object streams
