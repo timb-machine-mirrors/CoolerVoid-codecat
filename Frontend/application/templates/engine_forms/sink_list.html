@@ -33,7 +33,7 @@
 			    <td><a href="/front/auth/rules/update/{{ item.rule_id }}">{{ item.rule_id  }}</a></td>
                       <td>{{ item.title }}</td>
                       <td>{{ item.path }}</td>
-                      <td>{{ item.lines }}</td>
+                      <td>{{ item.lines[:10]+"..." }}</td>
 		      <td>{{ item.lang  }}</td> 
  		      <td>
 				<form  method="post" action="/front/auth/engine/open_code">
