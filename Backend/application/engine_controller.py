@@ -10,6 +10,16 @@ from time import gmtime, strftime
 import datetime
 import socket
 
+
+def find_extension_by_lang(lang):
+    if "ruby" in lang:
+        lang="rb"
+    if "javascript" in lang:
+        lang="js"     
+    if "python" in lang:
+        lang="py"
+    return lang
+
 def list_table_cache():
     Engine.to_dict = Engine.to_dict
     elements = Engine.query.all()
@@ -57,12 +67,14 @@ def test_match_regex(filepath,regex1,regex2):
 def search_sinks(directory, extension,sink):
     total=0
     extension = extension.lower()
+    lang_db = extension
+    extension= find_extension_by_lang(lang_db)
     for dirpath, dirnames, files in os.walk(directory):
         for name in files:
             if extension and name.lower().endswith(extension):
                 current_path=os.path.join(dirpath, name)
                 Rules.to_dict = Rules.to_dict
-                elements = Rules.query.filter_by(lang=extension) 
+                elements = Rules.query.filter_by(lang=lang_db) 
                 for item in elements:
                     if sink == 0:
                         regex1=item.match1
@@ -90,26 +102,15 @@ def search_sinks(directory, extension,sink):
                     lines=0
     return total
 
-def find_extension_by_lang(lang):
-    if "ruby" in lang:
-        lang="rb"
-    if "javascript" in lang:
-        lang="js"     
-    if "python" in lang:
-        lang="py"
-    return lang
-
-
 def getsinks():
-    lang = find_extension_by_lang(request.json.get('lang'))
+    lang = request.json.get('lang')
     path = request.json.get('path')
     sink = request.json.get('sink')
     result=search_sinks(path,lang,sink)
     return ("True")
 
 def all_sinks():
-    lang = find_extension_by_lang(request.json.get('lang'))
-    path = request.json.get('path')
+    lang = request.json.get('lang')
     path = request.json.get('path')
     result=search_sinks(path,lang,0)
     return ("True")
