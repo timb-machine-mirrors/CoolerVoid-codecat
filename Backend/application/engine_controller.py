@@ -90,8 +90,18 @@ def search_sinks(directory, extension,sink):
                     lines=0
     return total
 
+def find_extension_by_lang(lang):
+    if "ruby" in lang:
+        lang="rb"
+    if "javascript" in lang:
+        lang="js"     
+    if "python" in lang:
+        lang="py"
+    return lang
+
+
 def getsinks():
-    lang = request.json.get('lang')
+    lang = find_extension_by_lang(request.json.get('lang'))
     path = request.json.get('path')
     sink = request.json.get('sink')
     result=search_sinks(path,lang,sink)
