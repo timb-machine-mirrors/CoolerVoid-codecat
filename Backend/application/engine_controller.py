@@ -108,7 +108,8 @@ def getsinks():
     return ("True")
 
 def all_sinks():
-    lang = request.json.get('lang')
+    lang = find_extension_by_lang(request.json.get('lang'))
+    path = request.json.get('path')
     path = request.json.get('path')
     result=search_sinks(path,lang,0)
     return ("True")
