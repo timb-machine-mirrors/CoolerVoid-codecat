@@ -4,6 +4,8 @@ CodeCat is a open source tool to help you in static code analysis, to find/track
 <img align="center" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/Screenshot.png">
 <br>
 
+Current rules for C,C++,GO,Python,javascript,Swift,PHP,Ruby,ASP and Java.(you can create your rules)
+
 ## How too install, step by step:
 <img align="right" width="240" height="220" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/codecat01.png">
 
