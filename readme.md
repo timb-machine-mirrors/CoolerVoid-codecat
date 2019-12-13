@@ -1,8 +1,7 @@
 # CodeCat - Tool to help in codereview 
 
-CodeCat is a open source tool to help you in codereview, to find/track sinks and this points follow regex rules...
+CodeCat is a open source tool to help you in codereview, to find/track sinks and bugs, this points follow regex rules...  you can use in code analysis(static analysis).
 <img align="center" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/Screenshot.png">
-
 <br>
 
 ## How too install, step by step:
