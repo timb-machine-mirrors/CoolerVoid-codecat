@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.30)  11 DEC 2019 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.30)  13 DEC 2019 06:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1060,19 +1060,19 @@ Package pdftex.def Info: images/menu1.png  used on input line 103.
  [8
 
  <./images/menu1.png>]
-<images/insertrule2.png, id=79, 866.23625pt x 440.64626pt>
+<images/insertrule2.png, id=79, 810.02625pt x 482.80376pt>
 File: images/insertrule2.png Graphic file (type png)
 <use images/insertrule2.png>
 Package pdftex.def Info: images/insertrule2.png  used on input line 112.
-(pdftex.def)             Requested size: 256.0748pt x 130.25845pt.
+(pdftex.def)             Requested size: 256.0748pt x 152.62914pt.
  [9
 
  <./images/insertrule2.png>]
-<images/insertrule.png, id=87, 809.0225pt x 511.9125pt>
+<images/insertrule.png, id=87, 808.01875pt x 521.95pt>
 File: images/insertrule.png Graphic file (type png)
 <use images/insertrule.png>
 Package pdftex.def Info: images/insertrule.png  used on input line 121.
-(pdftex.def)             Requested size: 256.0748pt x 162.03441pt.
+(pdftex.def)             Requested size: 256.0748pt x 165.41064pt.
  [10
 
  <./images/insertrule.png>]
@@ -1147,7 +1147,7 @@ Package rerunfilecheck Info: File `raptor.out' has not changed.
 Here is how much of TeX's memory you used:
  20558 strings out of 492982
  370973 string characters out of 11884896
- 12465726 words of memory out of 17000000
+ 12465725 words of memory out of 17000000
  23602 multiletter control sequences out of 15000+600000
  20496 words of font info for 42 fonts, out of 12000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1156,7 +1156,7 @@ Here is how much of TeX's memory you used:
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on raptor.pdf (16 pages, 324131 bytes).
+Output written on raptor.pdf (16 pages, 297494 bytes).
 PDF statistics:
  159 PDF objects out of 1000 (max. 8388607)
  107 compressed objects within 2 object streams
