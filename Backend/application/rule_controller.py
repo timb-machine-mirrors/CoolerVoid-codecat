@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import os
-import tldextract
 from flask import current_app as app
 from flask import Flask, abort, request, jsonify, g, url_for
 from . rule_model import db, Rules
