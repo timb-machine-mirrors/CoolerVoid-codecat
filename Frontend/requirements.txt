@@ -9,5 +9,5 @@ passlib==1.7.1
 SQLAlchemy
 Werkzeug
 pyopenssl
-pyyaml
+pyyaml>=5.1
 wtforms
