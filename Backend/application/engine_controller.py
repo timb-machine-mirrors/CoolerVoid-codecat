@@ -52,13 +52,17 @@ def test_match_regex(filepath,regex1,regex2):
        cnt = 1
        match_lines=" "
        for line in fp:
-           if re.search(regex1, line, re.M|re.I):
-               if len(regex2) > 1:
-                   if re.search(regex2, line, re.M|re.I):
+           try:
+               if re.search(regex1, line, re.M|re.I):
+                   if len(regex2) > 1:
+                       if re.search(regex2, line, re.M|re.I):
+                           match_lines+=str(cnt)+","
+                   else:
                        match_lines+=str(cnt)+","
-               else:
-                   match_lines+=str(cnt)+","
-           cnt += 1
+               cnt += 1
+           except:
+               print("Regex rule error: "+regex1 +" "+regex2)
+               return 0        
    if len(match_lines) > 1:
        return match_lines[:-1]
 
