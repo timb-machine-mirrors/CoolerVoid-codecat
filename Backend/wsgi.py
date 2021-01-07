@@ -15,4 +15,4 @@ def apply_caching(response):
 
 if __name__ == "__main__":
     app.secret_key = "super secret key"
-    app.run(host='0.0.0.0',port=5001,debug='False',ssl_context='adhoc')
+    app.run(host='0.0.0.0',port=50001,debug='False',ssl_context='adhoc')

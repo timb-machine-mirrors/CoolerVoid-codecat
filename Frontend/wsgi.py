@@ -38,4 +38,4 @@ if __name__ == "__main__":
 #            sys.exit("Error starting flask server. " + "Missing cert or key. Details: {}".format(e))
     app.secret_key = "super secret key"
 # if you need use your cert change 'adhoc' to context var
-    app.run(host='0.0.0.0',port=9093,debug='False',ssl_context='adhoc')
+    app.run(host='0.0.0.0',port=50093,debug='False',ssl_context='adhoc')
