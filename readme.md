@@ -32,16 +32,16 @@ $ curl -i -X POST -H "Content-Type: application/json" -d '{"email":"admin2@test.
 
 ```
 
-This end point /api/users, run only one time in first deploy, if you try to send request again to insert user, the endpoint return 404... is for security.
+These endpoint /API/users run only once in the first deployment. If you try to send a request again to insert a user, the endpoint return 404... is for security.
 
 
-Go to this following "https://127.0.0.1:50093/front/auth/".
-Now you can enter in this system auth, use login "admin", pass "rubrik123".
+Go to the following "https://127.0.0.1:50093/front/auth/".
+Now you can enter this system-auth, use login "admin", pass "rubrik123".
 
 *Note About TLS:* You can configure and load your TLS cert in "wsgi.py".
 
 
-## How you can use it ?
+## How can you use it?
 Please study the doc.
 https://github.com/CoolerVoid/codecat/blob/master/doc/raptor.pdf
 
