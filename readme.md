@@ -18,7 +18,7 @@ $ cd Backend
 $ sudo python3 -m pip install -r requirements.txt
 ```
 
-Run backend and frontend...
+Run backend and frontend:
 ```
 $ cd Codecat
 $ cd Frontend; python3 wsgi.py &
@@ -32,7 +32,7 @@ $ curl -i -X POST -H "Content-Type: application/json" -d '{"email":"admin2@test.
 
 ```
 
-These endpoint /API/users run only once in the first deployment. If you try to send a request again to insert a user, the endpoint return 404... is for security.
+These endpoint /API/users run only once in the first deployment. If you try to send a request again to insert a user, the endpoint return 404 is for security.
 
 
 Go to the following "https://127.0.0.1:50093/front/auth/".
@@ -43,7 +43,7 @@ Now you can enter this system-auth, use login "admin", pass "rubrik123".
 
 # Production
 
- If you need to run in production. So I recommend other way
+ Suppose you need to run in production. So I recommend another way.
 ```
 $ gunicorn -b 127.0.0.1:50001 wsgi:app
 ```
@@ -52,7 +52,7 @@ If you want, you can use TLS with CERT resources:
 ```
 $ gunicorn --certfile=server.crt --keyfile=server.key -b 127.0.0.1:50001 wsgi:app
 ```
-The same command to frontend but you need use the port 50093.
+The same command to frontend, but you need to use port 50093.
 
 
 
@@ -60,7 +60,7 @@ The same command to frontend but you need use the port 50093.
 Please study the doc.
 https://github.com/CoolerVoid/codecat/blob/master/doc/raptor.pdf
 
-So any questions, create a issue and I can try help you...
+So any questions, create an issue, and I can try to help you.
 
 
 
