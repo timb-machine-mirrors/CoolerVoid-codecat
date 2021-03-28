@@ -2,6 +2,7 @@ click==6.7
 flask>=1.0.0
 Flask-HTTPAuth>=3.2.3
 Flask-SQLAlchemy==2.2
+Flask-wtf
 itsdangerous==0.24
 Jinja2
 MarkupSafe==1.0
