@@ -41,13 +41,26 @@ Now you can enter this system-auth, use login "admin", pass "rubrik123".
 *Note About TLS:* You can configure and load your TLS cert in "wsgi.py".
 
 
+# Production
+
+ If you need to run in production. So I recommend other way
+```
+$ gunicorn -b 127.0.0.1:50001 wsgi:app
+```
+
+If you want, you can use TLS with CERT resources:
+```
+$ gunicorn --certfile=server.crt --keyfile=server.key -b 127.0.0.1:50001 wsgi:app
+```
+The same command to frontend but you need use the port 50093.
+
+
+
 ## How can you use it?
 Please study the doc.
 https://github.com/CoolerVoid/codecat/blob/master/doc/raptor.pdf
 
-
-
-
+So any questions, create a issue and I can try help you...
 
 
 
