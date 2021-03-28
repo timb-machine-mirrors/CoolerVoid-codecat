@@ -12,6 +12,10 @@ import datetime
 
 ##### ACL / AUTH
 
+@app.route('/health')
+def health():
+        return user_controller.get_health()
+
 def verify_pass(request):
     return user_controller.test_password(request)
 

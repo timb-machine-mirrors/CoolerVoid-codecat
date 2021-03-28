@@ -10,6 +10,10 @@ from time import gmtime, strftime
 import datetime
 from flask_httpauth import HTTPTokenAuth,HTTPBasicAuth,MultiAuth
 
+@app.route('/health')
+def health():
+        return user_controller.get_health()
+
 auth = HTTPBasicAuth()
 auth_token = HTTPTokenAuth('Bearer')
 multi_auth = MultiAuth(auth, auth_token) 

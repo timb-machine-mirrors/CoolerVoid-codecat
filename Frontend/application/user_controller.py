@@ -8,6 +8,9 @@ from helper import tokenform
 from helper import user_rest_api 
 import datetime
 
+def get_health():
+        return ("1")
+
 def logof():
     session.pop('userkey', None)
     return redirect("front/auth")

@@ -6,6 +6,8 @@ from .user_model import db, User
 from time import gmtime, strftime
 import datetime
 
+def get_health():
+    return ("1")
 
 def test_password(username_or_token, password):
     # first try to authenticate by token
