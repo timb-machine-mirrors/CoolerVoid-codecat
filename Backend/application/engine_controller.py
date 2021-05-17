@@ -8,6 +8,7 @@ from . engine_model import db, Engine
 from time import gmtime, strftime
 import datetime
 import socket
+from sqlalchemy import exc
 
 
 def find_extension_by_lang(lang):
@@ -20,11 +21,12 @@ def find_extension_by_lang(lang):
     return lang
 
 def list_table_cache():
-    Engine.to_dict = Engine.to_dict
-    elements = Engine.query.all()
-    Cache_Array = []
+    try:
+     Engine.to_dict = Engine.to_dict
+     elements = Engine.query.all()
+     Cache_Array = []
 
-    for item in elements:
+     for item in elements:
         line={}
         line["rule_id"]=str(item.rule_id)
         line["title"]=str(item.title)
@@ -32,13 +34,17 @@ def list_table_cache():
         line["lines"]=str(item.lines)
         line["lang"]=str(item.lang)
         Cache_Array.append(line)
-    return jsonify(Cache_Array)
+     return jsonify(Cache_Array)
+    except exc.SQLAlchemyError as e:
+     print(e)
+     return "Error"
 
 def clear_cache_all():
     try:
         total = db.session.query(Engine).delete()
         db.session.commit()
-    except:
+    except exc.SQLAlchemyError as e:
+        print(e)
         total=0
         db.session.rollback()
     return jsonify(total)
@@ -77,8 +83,9 @@ def search_sinks(directory, extension,sink):
             if extension and name.lower().endswith(extension):
                 current_path=os.path.join(dirpath, name)
                 Rules.to_dict = Rules.to_dict
-                elements = Rules.query.filter_by(lang=lang_db) 
-                for item in elements:
+                try:
+                 elements = Rules.query.filter_by(lang=lang_db) 
+                 for item in elements:
                     if sink == 0:
                         regex1=item.match1
                         regex2=item.match2
@@ -103,6 +110,9 @@ def search_sinks(directory, extension,sink):
                             db.session.commit()
                             total+=1
                     lines=0
+                except exc.SQLAlchemyError as e:
+                    print(e)
+                    return "Error"
     return total
 
 def getsinks():
