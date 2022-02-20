@@ -9,8 +9,8 @@ class rest_call:
 
   def __init__(self, login, password):
     d={}
-    document = open("helper/api_config.yaml", 'r')
-    parsed = yaml.load(document, Loader=yaml.FullLoader)
+    with open('helper/api_config.yaml', 'r') as file:
+        parsed = yaml.safe_load(file)
     # load external server config at file "config.yaml"
     for key,value in parsed.items():
         if key == "host":
