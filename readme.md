@@ -1,10 +1,9 @@
 # CodeCat - Tool to help in static code analysis
-
-CodeCat is a open source tool to help you in static code analysis, to find/track sinks and bugs, this points follow regex rules... 
+CodeCat is an open-source tool to help you find/track sinks and bugs in static code analysis. These points follow regex rules.
 <img align="center" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/Screenshot.png">
 <br>
 
-Current rules for C,C++,GO,Python,javascript,Swift,PHP,Ruby,ASP and Java.(you can create your rules)
+Current rules for C,C++,GO,Python,javascript,Swift,PHP,Ruby,ASP,Kotlin,Dart and Java.(you can create your rules)
 
 ## How too install, step by step:
 <img align="right" width="240" height="220" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/codecat01.png">
@@ -32,8 +31,7 @@ $ curl -i -X POST -H "Content-Type: application/json" -d '{"email":"admin2@test.
 
 ```
 
-These endpoint /API/users run only once in the first deployment. If you try to send a request again to insert a user, the endpoint return 404 is for security.
-
+These endpoint /API/users run only once in the first deployment. If you try to send a request again to insert a user, the endpoint return 404 is security to block resources of possible attacks.
 
 Go to the following "https://127.0.0.1:50093/front/auth/".
 Now you can enter this system-auth, use login "admin", pass "rubrik123".
@@ -64,7 +62,7 @@ So any questions, create an issue, and I can try to help you.
 
 
 ## Note
-The purpose of this tool is to use in pentest, take attention if you have a proper authorization before to use that. I do not have responsibility for your actions. You can use a hammer to construct a house or destroy it, choose the law path, don't be a bad guy, remember.
+The purpose of this tool is to use in code review, take attention if you have a proper authorization before to use that. I do not have responsibility for your actions. You can use a hammer to construct a house or destroy it, choose the law path, don't be a bad guy, remember.
 
 
 ## Developed by: 
