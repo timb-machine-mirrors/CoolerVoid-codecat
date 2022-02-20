@@ -32,6 +32,7 @@ def list_table_cache():
         line["title"]=str(item.title)
         line["path"]=str(item.path)
         line["lines"]=str(item.lines)
+        line["risk"]=str(item.risk)
         line["lang"]=str(item.lang)
         Cache_Array.append(line)
      return jsonify(Cache_Array)
@@ -91,6 +92,7 @@ def search_sinks(directory, extension,sink):
                         regex2=item.match2
                         rule=item.title
                         rule_id=item.id
+                        risk=item.level
                         lines=test_match_regex(current_path,regex1,regex2)
                     else:
                         lines=test_match_regex(current_path,sink,"0")
@@ -101,6 +103,7 @@ def search_sinks(directory, extension,sink):
                             element['lines']=lines
                             element['path']=current_path
                             element['lang']=extension
+                            element['risk']=risk
                             if sink == 0:
                                 element['rule_id']=rule_id
                                 element['title']=rule

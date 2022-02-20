@@ -1,46 +1,22 @@
-/* PrismJS 1.17.1
-https://prismjs.com/download.html#themes=prism-solarizedlight&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+antlr4+apacheconf+apl+applescript+aql+c+arff+asciidoc+asm6502+csharp+autohotkey+autoit+bash+basic+batch+bbcode+bison+bnf+brainfuck+brightscript+bro+cpp+aspnet+arduino+cil+coffeescript+cmake+clojure+ruby+csp+css-extras+d+dart+diff+markup-templating+dns-zone-file+docker+ebnf+eiffel+ejs+elixir+elm+lua+erb+erlang+fsharp+firestore-security-rules+flow+fortran+ftl+gcode+gdscript+gedcom+gherkin+git+glsl+gml+go+graphql+groovy+less+handlebars+haskell+haxe+hcl+http+hpkp+hsts+ichigojam+icon+inform7+ini+io+j+java+scala+php+javastacktrace+jolie+jq+javadoclike+n4js+markdown+json+jsonp+json5+julia+keyman+kotlin+latex+crystal+scheme+liquid+lisp+livescript+lolcode+etlua+makefile+js-templates+django+matlab+mel+mizar+monkey+moonscript+n1ql+typescript+nand2tetris-hdl+nasm+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+pascaligo+pcaxis+perl+jsdoc+phpdoc+php-extras+sql+powershell+processing+prolog+properties+protobuf+scss+puppet+pure+python+q+qore+r+js-extras+jsx+renpy+reason+vala+rest+rip+roboconf+robot-framework+textile+rust+plsql+sass+stylus+javadoc+lilypond+shell-session+smalltalk+smarty+solidity+soy+turtle+splunk-spl+sqf+sas+twig+swift+yaml+tcl+haml+toml+tt2+sparql+pug+tsx+t4-templating+visual-basic+t4-cs+regex+vbnet+velocity+verilog+vhdl+vim+t4-vb+wasm+wiki+xeora+xojo+xquery+tap+zig&plugins=line-highlight+line-numbers+data-uri-highlight+file-highlight+toolbar+highlight-keywords+command-line+show-language+copy-to-clipboard+download-button */
-/*
- Solarized Color Schemes originally by Ethan Schoonover
- http://ethanschoonover.com/solarized
-
- Ported for PrismJS by Hector Matos
- Website: https://krakendev.io
- Twitter Handle: https://twitter.com/allonsykraken)
-*/
-
-/*
-SOLARIZED HEX
---------- -------
-base03    #002b36
-base02    #073642
-base01    #586e75
-base00    #657b83
-base0     #839496
-base1     #93a1a1
-base2     #eee8d5
-base3     #fdf6e3
-yellow    #b58900
-orange    #cb4b16
-red       #dc322f
-magenta   #d33682
-violet    #6c71c4
-blue      #268bd2
-cyan      #2aa198
-green     #859900
-*/
+/**
+ * Darcula theme
+ *
+ * Adapted from a theme based on:
+ * IntelliJ Darcula Theme (https://github.com/bulenkov/Darcula)
+ *
+ * @author Alexandre Paradis <service.paradis@gmail.com>
+ * @version 1.0
+ */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #657b83; /* base00 */
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
+	color: #a9b7c6;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
-	word-wrap: normal;
-
 	line-height: 1.5;
 
 	-moz-tab-size: 4;
@@ -55,12 +31,14 @@ pre[class*="language-"] {
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	background: #073642; /* base02 */
+	color: inherit;
+	background: rgba(33, 66, 131, .85);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	background: #073642; /* base02 */
+	color: inherit;
+	background: rgba(33, 66, 131, .85);
 }
 
 /* Code blocks */
@@ -68,92 +46,6 @@ pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background-color: #fdf6e3; /* base3 */
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #93a1a1; /* base1 */
-}
-
-.token.punctuation {
-	color: #586e75; /* base01 */
-}
-
-.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #268bd2; /* blue */
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.url,
-.token.inserted {
-	color: #2aa198; /* cyan */
-}
-
-.token.entity {
-	color: #657b83; /* base00 */
-	background: #eee8d5; /* base2 */
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-	color: #859900; /* green */
-}
-
-.token.function,
-.token.class-name {
-	color: #b58900; /* yellow */
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-	color: #cb4b16; /* orange */
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-
-pre[data-line] {
-	position: relative;
-	padding: 1em 0 1em 3em;
 }
 
 .line-highlight {
@@ -212,6 +104,10 @@ pre[class*="language-"].line-numbers > code {
 	white-space: inherit;
 }
 
+pre[data-line] {
+	position: relative;
+	padding: 1em 0 1em 3em;
+}
 .line-numbers .line-numbers-rows {
 	position: absolute;
 	pointer-events: none;
@@ -242,103 +138,114 @@ pre[class*="language-"].line-numbers > code {
 			padding-right: 0.8em;
 			text-align: right;
 		}
-
-div.code-toolbar {
-	position: relative;
+		
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2b2b2b;
 }
 
-div.code-toolbar > .toolbar {
-	position: absolute;
-	top: .3em;
-	right: .2em;
-	transition: opacity 0.3s ease-in-out;
-	opacity: 0;
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
 }
 
-div.code-toolbar:hover > .toolbar {
-	opacity: 1;
+.token.comment,
+.token.prolog,
+.token.cdata {
+	color: #808080;
 }
 
-/* Separate line b/c rules are thrown out if selector is invalid.
-   IE11 and old Edge versions don't support :focus-within. */
-div.code-toolbar:focus-within > .toolbar {
-	opacity: 1;
+.token.delimiter,
+.token.boolean,
+.token.keyword,
+.token.selector,
+.token.important,
+.token.atrule {
+	color: #cc7832;
 }
 
-div.code-toolbar > .toolbar .toolbar-item {
-	display: inline-block;
+.token.operator,
+.token.punctuation,
+.token.attr-name {
+	color: #a9b7c6;
 }
 
-div.code-toolbar > .toolbar a {
-	cursor: pointer;
+.token.tag,
+.token.tag .punctuation,
+.token.doctype,
+.token.builtin {
+	color: #e8bf6a;
 }
 
-div.code-toolbar > .toolbar button {
-	background: none;
-	border: 0;
-	color: inherit;
-	font: inherit;
-	line-height: normal;
-	overflow: visible;
-	padding: 0;
-	-webkit-user-select: none; /* for button */
-	-moz-user-select: none;
-	-ms-user-select: none;
+.token.entity,
+.token.number,
+.token.symbol {
+	color: #6897bb;
 }
 
-div.code-toolbar > .toolbar a,
-div.code-toolbar > .toolbar button,
-div.code-toolbar > .toolbar span {
-	color: #bbb;
-	font-size: .8em;
-	padding: 0 .5em;
-	background: #f5f2f0;
-	background: rgba(224, 224, 224, 0.2);
-	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-	border-radius: .5em;
+.token.property,
+.token.constant,
+.token.variable {
+	color: #9876aa;
 }
 
-div.code-toolbar > .toolbar a:hover,
-div.code-toolbar > .toolbar a:focus,
-div.code-toolbar > .toolbar button:hover,
-div.code-toolbar > .toolbar button:focus,
-div.code-toolbar > .toolbar span:hover,
-div.code-toolbar > .toolbar span:focus {
-	color: inherit;
-	text-decoration: none;
+.token.string,
+.token.char {
+	color: #6a8759;
 }
 
-.command-line-prompt {
-	border-right: 1px solid #999;
-	display: block;
-	float: left;
-	font-size: 100%;
-	letter-spacing: -1px;
-	margin-right: 1em;
-	pointer-events: none;
-
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+.token.attr-value,
+.token.attr-value .punctuation {
+	color: #a5c261;
 }
 
-.command-line-prompt > span:before {
-	color: #999;
-	content: ' ';
-	display: block;
-	padding-right: 0.8em;
+.token.attr-value .punctuation:first-child {
+	color: #a9b7c6;
 }
 
-.command-line-prompt > span[data-user]:before {
-	content: "[" attr(data-user) "@" attr(data-host) "] $";
+.token.url {
+	color: #287bde;
+	text-decoration: underline;
 }
 
-.command-line-prompt > span[data-user="root"]:before {
-	content: "[" attr(data-user) "@" attr(data-host) "] #";
+.token.function {
+	color: #ffc66d;
 }
 
-.command-line-prompt > span[data-prompt]:before {
-	content: attr(data-prompt);
+.token.regex {
+	background: #364135;
+}
+
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.inserted {
+	background: #294436;
+}
+
+.token.deleted {
+	background: #484a4a;
+}
+
+code.language-css .token.property,
+code.language-css .token.property + .token.punctuation {
+	color: #a9b7c6;
+}
+
+code.language-css .token.id {
+	color: #ffc66d;
+}
+
+code.language-css .token.selector > .token.class,
+code.language-css .token.selector > .token.attribute,
+code.language-css .token.selector > .token.pseudo-class,
+code.language-css .token.selector > .token.pseudo-element {
+	color: #ffc66d;
 }
 

@@ -1,0 +1,37 @@
+CREATE TABLE userronin (
+	id INTEGER NOT NULL, 
+	login VARCHAR(30), 
+	passhash VARCHAR(128), 
+	mail VARCHAR(128), 
+	last_ip VARCHAR(40), 
+	owner VARCHAR(12), 
+	created_at TIMESTAMP, 
+	update_at TIMESTAMP, 
+	PRIMARY KEY (id), 
+	UNIQUE (login), 
+	UNIQUE (mail)
+);
+CREATE TABLE rules (
+	id INTEGER NOT NULL, 
+	lang VARCHAR(32), 
+	title VARCHAR(128), 
+	description TEXT, 
+	level VARCHAR(16), 
+	match1 VARCHAR(512), 
+	match2 VARCHAR(512), 
+	created_at TIMESTAMP, 
+	update_at TIMESTAMP, 
+	PRIMARY KEY (id), 
+	UNIQUE (title)
+);
+CREATE TABLE cache (
+	id INTEGER NOT NULL, 
+	title VARCHAR(128), 
+	path VARCHAR(2048), 
+	lines VARCHAR(2048), 
+	risk VARCHAR(32), 
+	lang VARCHAR(32), 
+	rule_id VARCHAR(16), 
+	PRIMARY KEY (id)
+);
+

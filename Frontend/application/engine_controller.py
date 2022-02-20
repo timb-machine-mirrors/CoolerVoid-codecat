@@ -40,6 +40,8 @@ def open_code(request):
         lang="NASM"
     if "swift" in lang:
         lang="Swift"
+    if "kt" in lang:
+        lang="Java"
     #TODO improve validate here...
     if not os.path.isfile(path):
         return render_template('engine_forms/clear.html',title="File path not exist")

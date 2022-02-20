@@ -13,6 +13,7 @@
                       <th>Title</th>
                       <th>Path</th>
                       <th>Lines</th>
+		      <th>Risk</th>
 		      <th>Ext</th>
 		      <th>View</th>
                     </tr>
@@ -23,6 +24,7 @@
                       <th>Title</th>
                       <th>Path</th>
                       <th>Lines</th>
+		      <th>Risk</th>
 		      <th>Ext</th>
 		      <th>View</th>
                     </tr>
@@ -31,9 +33,15 @@
                 {% for item in elements %}
                     <tr>
 			    <td><a href="/front/auth/rules/update/{{ item.rule_id }}">{{ item.rule_id  }}</a></td>
-                      <td>{{ item.title }}</td>
-                      <td>{{ item.path }}</td>
-                      <td>{{ item.lines[:10]+"..." }}</td>
+			    <td><font color="orange">{{ item.title }}</font></td>
+			    <td><font color="yellow">{{ item.path }}</font></td>
+		      <td><font color="green">{{ item.lines[:10]+"..." }}</font></td>
+		      <td>
+			      {% if item.risk == "high" or  item.risk == "High"  %}<font color="red">{{ item.risk  }}</font>{% endif %}
+			      {% if item.risk == "medium" or  item.risk == "Medium"  %}<font color="yellow">{{ item.risk  }}</font>{% endif %}
+			      {% if item.risk == "low" or  item.risk == "Low"  %}<font color="green">{{ item.risk  }}</font>{% endif %}
+			      {% if item.risk == "Info" or  item.risk == "Warning" or  item.risk == "Alert"  %}<font color="cyan">{{ item.risk  }}</font>{% endif %}
+		      </td> 
 		      <td>{{ item.lang  }}</td> 
  		      <td>
 				<form  method="post" action="/front/auth/engine/open_code">

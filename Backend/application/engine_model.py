@@ -9,6 +9,7 @@ class Engine(db.Model):
  title = db.Column(db.String(128))
  path = db.Column(db.String(2048))
  lines = db.Column(db.String(2048))
+ risk = db.Column(db.String(32))
  lang = db.Column(db.String(32))
  rule_id = db.Column(db.String(16))
 
