@@ -52,6 +52,7 @@ $ gunicorn --certfile=server.crt --keyfile=server.key -b 127.0.0.1:50001 wsgi:ap
 ```
 The same command to frontend, but you need to use port 50093.
 
+Remember, codecat have a function to recursive reading in the directory. This function with user input is a dangerous issue called **"path traversal"**. Use this tool in a controlled place. My machine is a local virtual machine to run a codecat. Looking at the firewall context, you can block different IP addresses to limit access of codecat for example.
 
 
 ## How can you use it?
