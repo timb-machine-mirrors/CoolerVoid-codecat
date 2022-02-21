@@ -1,5 +1,5 @@
 # CodeCat - Tool to help in static code analysis
-CodeCat is an open-source tool to help you find/track sinks and bugs in static code analysis. These points follow regex rules.
+CodeCat is an open-source tool to help you find/track user input sinks and bugs using static code analysis. These points follow regex rules.
 <img align="center" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/Screenshot.png">
 <br>
 
