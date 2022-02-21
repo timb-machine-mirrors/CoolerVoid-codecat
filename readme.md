@@ -5,6 +5,9 @@ CodeCat is an open-source tool to help you find/track sinks and bugs in static c
 
 Current rules for C,C++,GO,Python,javascript,Swift,PHP,Ruby,ASP,Kotlin,Dart and Java.(you can create your rules)
 
+## video
+https://www.youtube.com/watch?v=Bmfhsr3BvyA
+
 ## How too install, step by step:
 <img align="right" width="240" height="220" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/codecat01.png">
 
