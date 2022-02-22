@@ -10,16 +10,26 @@ import datetime
 import socket
 from sqlalchemy import exc
 
-
+def get_true_path(basedir, path, follow_symlinks=True):
+    if follow_symlinks:
+        matchpath = os.path.realpath(path)
+    else:
+        matchpath = os.path.abspath(path)
+    return matchpath
+                                        
 def is_safe_path (path_in):
-    start_path="/home/"
+    true_path=get_true_path(path_in)
     clear_list={"..","\\","./","...","%2e","%252e","%c0%ae","%uff0e","..%5c","%255c","%","%252f"}
+    block_dirs={"/usr/","/dev/","/var/","/lib/","/bin/","/boot/","/etc/"}
+    # blocks /etc/passwd, /etc/shadow, /usr/serv/httpd ...
+    for dir2block in block_dirs:
+        if true_path.startswith(dir2block):
+            return False
+    for n in clear_list:
+        if n in path_in:
+            return False
+    return True
 
-    if path_in.startswith(start_path):
-        for n in clear_list:
-            if n in path_in:
-                return False
-        return True
 
 def find_extension_by_lang(lang):
     if "ruby" in lang:
