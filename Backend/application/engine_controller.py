@@ -10,7 +10,7 @@ import datetime
 import socket
 from sqlalchemy import exc
 
-def get_true_path(basedir, path, follow_symlinks=True):
+def get_true_path(path, follow_symlinks=True):
     if follow_symlinks:
         matchpath = os.path.realpath(path)
     else:
@@ -18,7 +18,7 @@ def get_true_path(basedir, path, follow_symlinks=True):
     return matchpath
                                         
 def is_safe_path (path_in):
-    true_path=get_true_path(path_in)
+    true_path=str(get_true_path(path_in))
     clear_list={"..","\\","./","...","%2e","%252e","%c0%ae","%uff0e","..%5c","%255c","%","%252f"}
     block_dirs={"/usr/","/dev/","/var/","/lib/","/bin/","/boot/","/etc/"}
     # blocks /etc/passwd, /etc/shadow, /usr/serv/httpd ...
@@ -142,7 +142,7 @@ def getsinks():
     lang = request.json.get('lang')
     path = request.json.get('path')
     sink = request.json.get('sink')
-    if is_safe_path(path)== False:
+    if is_safe_path(path) == False:
         return "Error in path"
     result=search_sinks(path,lang,sink)
     return ("True")
@@ -150,7 +150,7 @@ def getsinks():
 def all_sinks():
     lang = request.json.get('lang')
     path = request.json.get('path')
-    if is_safe_path(path)== False:
+    if is_safe_path(path) == False:
         return "Error in path"
     result=search_sinks(path,lang,0)
     return ("True")
