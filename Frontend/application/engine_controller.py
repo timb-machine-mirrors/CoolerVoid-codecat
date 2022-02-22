@@ -42,6 +42,8 @@ def open_code(request):
         lang="Swift"
     if "kt" in lang:
         lang="Java"
+    if "dart" in lang:
+        lanf="Java"
     #TODO improve validate here...
     if not os.path.isfile(path):
         return render_template('engine_forms/clear.html',title="File path not exist")

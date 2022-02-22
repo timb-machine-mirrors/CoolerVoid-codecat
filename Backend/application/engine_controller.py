@@ -11,6 +11,16 @@ import socket
 from sqlalchemy import exc
 
 
+def is_safe_path (path_in):
+    start_path="/home/"
+    clear_list={"..","\\","./","...","%2e","%252e","%c0%ae","%uff0e","..%5c","%255c","%","%252f"}
+
+    if path_in.startswith(start_path):
+        for n in clear_list:
+            if n in path_in:
+                return False
+        return True
+
 def find_extension_by_lang(lang):
     if "ruby" in lang:
         lang="rb"
@@ -122,12 +132,16 @@ def getsinks():
     lang = request.json.get('lang')
     path = request.json.get('path')
     sink = request.json.get('sink')
+    if is_safe_path(path)== False:
+        return "Error in path"
     result=search_sinks(path,lang,sink)
     return ("True")
 
 def all_sinks():
     lang = request.json.get('lang')
     path = request.json.get('path')
+    if is_safe_path(path)== False:
+        return "Error in path"
     result=search_sinks(path,lang,0)
     return ("True")
 
