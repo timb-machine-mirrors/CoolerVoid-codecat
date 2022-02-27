@@ -109,3 +109,10 @@ def clear_all_sinks():
 def show_code():
     return engine_controller.open_code(request)
 
+@app.route('/front/auth/engine/uploadsource', methods=['GET','POST'])
+def upload_file():
+    return engine_controller.upload_source(request)
+
+@app.route('/front/auth/engine/remove_source', methods=['GET','POST'])
+def remove_file():
+    return engine_controller.remove_source(request)

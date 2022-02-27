@@ -6,12 +6,17 @@
  <div class="col-md-6">
     {{ form.csrf_token }}
 
- <div class="form-label-group">
-    	<label for="path">Path of project</label><input type="text" id="path" class="form-control" placeholder="path" required="required"  name="path" autofocus="autofocus">
- </div>
-
 <br>
  <div class="form-label-group">
+    	<label for="lang">Uploaded projects with source code</label> 
+	<select name="uploaded_source">
+		{% for content in sources_dirs %}
+		<option value="{{ content }}">{{ content }} </option>
+		{% endfor %}
+  	        <option value="0" selected>None</option>
+	</select>
+ </div> 
+<div class="form-label-group">
     	<label for="lang">Language</label> 
 	<select name="lang">
   		<option value="python">Python</option>

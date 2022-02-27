@@ -1,0 +1,47 @@
+{% extends "AuthAdmin.html" %}
+{% block content %}
+ <center>
+  <form action="/front/auth/engine/uploadsource" method="POST" enctype="multipart/form-data">
+<div align="center">
+ <div class="col-md-6">
+    {{ form.csrf_token }}
+
+ <div class="form-label-group">
+	          <p><input type="file" name="file" accept=".zip"></p>
+ </div>
+
+<br>
+<br>
+ <div class="form-label-group">
+<br>
+ <button class="btn btn-sm btn-success" type="submit">Upload the zip file with source code</button>	
+</div>
+<br>
+  </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+ 
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                Success! {{ message[1]|safe }}
+                </div>
+            {% endif %}
+ 
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1]|safe }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+	{% endwith %}
+  </div>
+
+  </form>
+	<br> 
+
+</center> 
+{% endblock %}
+

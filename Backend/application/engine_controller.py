@@ -9,6 +9,7 @@ from time import gmtime, strftime
 import datetime
 import socket
 from sqlalchemy import exc
+from werkzeug.utils import secure_filename
 
 def get_true_path(path, follow_symlinks=True):
     if follow_symlinks:
@@ -99,6 +100,8 @@ def search_sinks(directory, extension,sink):
     extension = extension.lower()
     lang_db = extension
     extension= find_extension_by_lang(lang_db)
+    if sink  != 0:
+        risk="Warning"
     for dirpath, dirnames, files in os.walk(directory):
         for name in files:
             if extension and name.lower().endswith(extension):
@@ -112,7 +115,10 @@ def search_sinks(directory, extension,sink):
                         regex2=item.match2
                         rule=item.title
                         rule_id=item.id
-                        risk=item.level
+                        if sink != 0:
+                            risk=item.level
+                        else:
+                            risk="Warning"
                         lines=test_match_regex(current_path,regex1,regex2)
                     else:
                         lines=test_match_regex(current_path,sink,"0")
@@ -140,17 +146,17 @@ def search_sinks(directory, extension,sink):
 
 def getsinks():
     lang = request.json.get('lang')
-    path = request.json.get('path')
+    path = app.config['UPLOAD_PATH']+"/"+secure_filename(request.json.get('path'))
     sink = request.json.get('sink')
-    if is_safe_path(path) == False:
+    if is_safe_path(request.json.get('path')) == False:
         return "Error in path"
     result=search_sinks(path,lang,sink)
     return ("True")
 
 def all_sinks():
     lang = request.json.get('lang')
-    path = request.json.get('path')
-    if is_safe_path(path) == False:
+    path = app.config['UPLOAD_PATH']+"/"+secure_filename(request.json.get('path'))
+    if is_safe_path(request.json.get('path')) == False:
         return "Error in path"
     result=search_sinks(path,lang,0)
     return ("True")
