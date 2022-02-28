@@ -14,9 +14,28 @@ import zipfile
 import pathlib
 import shutil
 
+def get_true_path(path, follow_symlinks=True):
+    if follow_symlinks:
+        matchpath = os.path.realpath(path)
+    else:
+        matchpath = os.path.abspath(path)
+    return matchpath
+                                        
+def is_safe_path (path_in):
+    true_path=str(get_true_path(path_in))
+    block_dirs={"/usr/","/dev/","/var/","/lib/","/bin/","/boot/","/etc/"}
+    # blocks /etc/passwd, /etc/shadow, /usr/serv/httpd ...
+    for dir2block in block_dirs:
+        if true_path.startswith(dir2block):
+            return False
+    return True
 
 def open_code(request):
+    if user_controller.check_auth() == False:
+        return redirect("front/auth")
     path=request.form['path']
+    if is_safe_path(path) == False:
+        return redirect("front/auth")
     lines=request.form['lines']
     lang=request.form['lang']
     if "c" in lang:
@@ -60,7 +79,6 @@ def open_code(request):
     info="<br><b>Path: "+path+"<br>Lines: "+lines+"</b><br>"
     highlight=info+'<pre class="line-numbers" data-line="'+lines+'"> <code class="language-'+lang+'">'+code_content+'</code></pre>'
     return render_template('engine_forms/code_view.html',title="Code view",code_highlight=highlight)
-
 
 def clear_cache():
     if user_controller.check_auth() == False:
