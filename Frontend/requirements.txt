@@ -7,9 +7,10 @@ itsdangerous==0.24
 Jinja2
 MarkupSafe>=1.0
 passlib==1.7.1
-SQLAlchemy
+SQLAlchemy<1.4.0
 Werkzeug
 pyopenssl
 pyyaml>=5.1
-wtforms
+wtforms=2.3.3
+requests
 pyzip
