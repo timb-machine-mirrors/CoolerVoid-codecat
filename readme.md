@@ -13,12 +13,12 @@ https://www.youtube.com/watch?v=Bmfhsr3BvyA
 
 Go to CodeCat directory, install backend and frontend libs:
 ```
-$ apt install python3-pip
-$ cd Frontend
-$ sudo python3 -m pip install -r requirements.txt
-$ cd ..
-$ cd Backend
-$ sudo python3 -m pip install -r requirements.txt
+$ apt install python3-venv python3-dev libffi-dev rustc libssl-dev
+$ python3 -m venv .venv
+$ . .venv/bin/activate
+$ pip install wheel
+$ pip install -r Frontend/requirements.txt
+$ pip install -r Backend/requirements.txt
 ```
 
 Run backend and frontend:
