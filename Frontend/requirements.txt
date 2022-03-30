@@ -11,6 +11,6 @@ SQLAlchemy<1.4.0
 Werkzeug
 pyopenssl
 pyyaml>=5.1
-wtforms=2.3.3
+wtforms==2.3.3
 requests
 pyzip
