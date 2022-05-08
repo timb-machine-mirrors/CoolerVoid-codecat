@@ -133,7 +133,9 @@ def search_sinks(directory, extension,sink):
                             if sink == 0:
                                 element['rule_id']=rule_id
                                 element['title']=rule
-                               
+                            else:    
+                                element['rule_id']="Custom"
+                                element['title']="Search sink \""+str(sink)+"\""
                             code_sink = Engine(**element)
                             db.session.add(code_sink)
                             db.session.commit()
