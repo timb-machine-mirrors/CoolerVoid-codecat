@@ -8,6 +8,16 @@ Current rules for C,C++,GO,Python,javascript,Swift,PHP,Ruby,ASP,Kotlin,Dart and 
 ## video
 https://www.youtube.com/watch?v=Bmfhsr3BvyA
 
+
+## Features
+* Recursive code search by custom rules following Regex
+* Syntax Highlight in codeview
+* Search system using datatables another cool resources
+* Resource to upload project
+* Authentication system
+* Resource to control users
+* Resource to control allow list by IP address
+
 ## How too install, step by step:
 <img align="right" width="240" height="220" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/codecat01.png">
 
@@ -48,6 +58,18 @@ Go to the following "https://127.0.0.1:50093/front/auth/".
 Now you can enter this system-auth, use login "admin", pass "rubrik123".
 
 *Note About TLS:* You can configure and load your TLS cert in "wsgi.py".
+
+You can insert IP address in allow list to control access in HTTPd and Rest API:
+```
+$ cat Frontend/application/allow_list/addr.txt 
+127.0.0.1
+0.0.0.0
+$ cat Backend/application/allow_list/addr.txt 
+127.0.0.1
+0.0.0.0
+localhost
+
+```
 
 
 # Production
