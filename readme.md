@@ -34,7 +34,7 @@ $ pip install -r Frontend/requirements.txt
 $ pip install -r Backend/requirements.txt
 ```
 
-Set env vars
+Set env vars (use a proper vault to save that resource)
 ```
 $ export CODECAT_APPKEY="Dyland0Gc0m1C"
 $ export CODECAT_SECRET="M4rt1nMyster3c0m1C"
