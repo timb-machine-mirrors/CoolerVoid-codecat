@@ -50,8 +50,6 @@ def test_auth(request):
 def show_index(request):
     if check_auth() == False:
         return redirect("front/auth")
-
-
     img='<img src="/static/codecat1.png" height="400" width="400" >'
     return render_template('AuthAdmin.html',title="Welcome to Codecat",content=img)
 
@@ -93,7 +91,6 @@ def show_auth(request):
 def home():
     if check_auth() == False:
         return redirect("front/auth")
-
     img='<br><center><img src="/static/img/mage3.gif" height="200" width="300" ></center>'
     return render_template('AuthAdmin.html',title="Welcome to CodeCat",image=img)
 
@@ -103,7 +100,6 @@ def home():
 
 
 def List_table_users():
-    
     if check_auth() == False:
         return redirect("front/auth")
 

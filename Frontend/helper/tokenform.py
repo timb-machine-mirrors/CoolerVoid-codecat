@@ -1,11 +1,9 @@
 from wtforms.csrf.core import CSRF
 from hashlib import sha512
 import datetime
-
-SECRET_KEY = 'justanotherkey!'
+import os
 
 class Ice_CSRF(CSRF):
-
     def deadspread_2minutes(self, min):
        second=min
        if second & 1:
@@ -22,7 +20,7 @@ class Ice_CSRF(CSRF):
             time_list.append(datetime.datetime.now() - datetime.timedelta(minutes=count))
             count-=1
         for time2test in time_list:
-            token = str(sha512((SECRET_KEY + self.csrf_context+ str(time2test.minute)+str(time2test.hour)).encode('utf-8')).hexdigest()) 
+            token = str(sha512((os.environ['CODECAT_CSRF_KEY'] + self.csrf_context+ str(time2test.minute)+str(time2test.hour)).encode('utf-8')).hexdigest()) 
             if token == input_token:
                 return True
         return False
@@ -35,7 +33,7 @@ class Ice_CSRF(CSRF):
     def generate_csrf_token(self, csrf_token):
         now = datetime.datetime.now()
         #minutes=str(self.deadspread_2minutes(now.minute)
-        token = sha512((SECRET_KEY + self.csrf_context+ str(now.minute)+str(now.hour)).encode('utf-8')).hexdigest()
+        token = sha512((os.environ['CODECAT_CSRF_KEY'] + self.csrf_context+ str(now.minute)+str(now.hour)).encode('utf-8')).hexdigest()
         return token
 
     def validate_csrf_token(self, form, field):

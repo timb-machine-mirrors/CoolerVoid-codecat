@@ -7,6 +7,12 @@ from time import gmtime, strftime
 import datetime
 from sqlalchemy import exc
 
+def get_header_token():
+    header_in=str(request.headers['Authorization'])
+    token=header_in.split(" ")
+    return token[1]
+# todo add validation in token
+
 def get_health():
     return ("1")
 
@@ -40,6 +46,16 @@ def test_token(username_or_token):
      print(e)
      return False
 
+
+
+def get_token_header_to_id():
+    try:
+     token = get_header_token()
+     user=User.verify_auth_token(token)
+     return str(user.id)
+    except exc.SQLAlchemyError as e:
+     return "Error in token"
+
 def get_token2id():
     try:
      token = request.json.get('token')
@@ -48,6 +64,17 @@ def get_token2id():
     except exc.SQLAlchemyError as e:
      return "Error in token"
 
+def is_admin():
+    check_id=get_token_header_to_id()
+    user_test = User.query.filter_by(id=check_id).first()
+    if not "admin" in user_test.owner:
+        abort(403)
+        
+def is_admin_or_user():
+   check_id=get_token_header_to_id()
+   user_test = User.query.filter_by(id=check_id).first()
+   if not "admin" in user_test.owner and int(check_id) != user_test.id:
+        abort(403)
 
 def new_user():
     try:
@@ -59,7 +86,7 @@ def new_user():
      if User.query.filter_by(login=username).first() is not None:
          abort(400)    
      current_time = datetime.datetime.now()
-     user = User(login=username,mail=email,created_at=current_time)
+     user = User(login=username,mail=email,owner="admin",created_at=current_time)
      user.hash_password(password)
      db.session.add(user)
      db.session.commit()
@@ -74,6 +101,7 @@ def get_auth_token():
 
 
 def List_table_users():
+    is_admin() 
     users = User.query.all()
     Users_Array = []
     for user in users:
@@ -91,6 +119,7 @@ def List_table_users():
 
 # Insert User
 def insert_user():
+    is_admin()
     email = request.json.get('email')
     username = request.json.get('username')
     password = request.json.get('password')
@@ -115,6 +144,7 @@ def insert_user():
 
 # Return a user by ID
 def return_user(user_id):
+    is_admin_or_user()
     try:
      input=str(user_id)
      user = User.query.filter_by(id=input).first()
@@ -135,6 +165,7 @@ def return_user(user_id):
 
 # Delete user by ID
 def delete_user():
+    is_admin()
     try:
      input=request.json.get('id')
      if input is None:
@@ -149,6 +180,7 @@ def delete_user():
 
 # Update User
 def update_user():
+    is_admin_or_user()
     d={}
     d['id'] = request.json.get('id')
     d['mail'] = request.json.get('email')

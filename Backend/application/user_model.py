@@ -1,11 +1,12 @@
 from . import db
 import time
+import os
 from passlib.apps import custom_app_context as pwd_context
 from itsdangerous import (TimedJSONWebSignatureSerializer
                           as Serializer, BadSignature, SignatureExpired)
 from sqlalchemy import inspect
 
-key_secret = "test KEY TeSt asdasda f ef3t4gdf"
+key_secret = os.environ['CODECAT_SECRET']
 
 class User(db.Model):
  __tablename__ = 'userronin'

@@ -9,7 +9,7 @@ class rest_call:
 
   def __init__(self, login, password):
     d={}
-    with open('helper/api_config.yaml', 'r') as file:
+    with open('helper/api_config.yaml', 'r',encoding="utf-8") as file:
         parsed = yaml.safe_load(file)
     # load external server config at file "config.yaml"
     for key,value in parsed.items():

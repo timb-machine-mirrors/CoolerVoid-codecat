@@ -21,6 +21,13 @@ $ pip install -r Frontend/requirements.txt
 $ pip install -r Backend/requirements.txt
 ```
 
+Set env vars
+```
+$ export CODECAT_APPKEY="Dyland0Gc0m1C"
+$ export CODECAT_SECRET="M4rt1nMyster3c0m1C"
+$ export CODECAT_CSRF_KEY="y0ur SEcr3t K3y h3RE"
+```
+
 Run backend and frontend:
 ```
 $ cd Codecat

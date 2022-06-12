@@ -72,7 +72,7 @@ def open_code(request):
     if not os.path.isfile(path):
         return render_template('engine_forms/clear.html',title="File path not exist")
     code_content=""
-    with open(path) as fp:
+    with open(path,'r',encoding="utf-8") as fp:
         content = fp.read()
         codes= ''.join(content)
     code_content=str(flask.Markup.escape(codes))
