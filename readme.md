@@ -3,7 +3,8 @@ CodeCat is an open-source tool to help you find/track user input sinks and secur
 <img align="center" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/Screenshot.png">
 <br>
 
-Current rules for C,C++,GO,Python,javascript,Swift,PHP,Ruby,ASP,Kotlin,Dart and Java.(you can create your rules)
+Current rules for C,C++,GO,Python,javascript,Swift,PHP,Ruby,ASP,Kotlin,Dart and Java. 
+Yes, you can create your rules and manage each resource.
 
 ## video
 https://www.youtube.com/watch?v=Bmfhsr3BvyA
@@ -11,12 +12,14 @@ https://www.youtube.com/watch?v=Bmfhsr3BvyA
 
 ## Features
 * Recursive code search by custom rules following Regex
-* Syntax Highlight in codeview
-* Search system using datatables another cool resources
+* Syntax Highlight in code view
+* Search system using data tables,  fantastic resource!
+* System to manage rules
 * Resource to upload project
 * Authentication system
 * Resource to control users
-* Resource to control allow list by IP address
+* Resource to control access in HTTP following allow list by IP address
+* Application following security practices of OWASP
 
 ## How too install, step by step:
 <img align="right" width="240" height="220" src="https://github.com/CoolerVoid/codecat/blob/master/doc/images/codecat01.png">
