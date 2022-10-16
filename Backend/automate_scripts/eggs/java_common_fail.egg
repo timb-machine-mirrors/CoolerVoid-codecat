@@ -1,0 +1,92 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::EGG:COMMON:JAVA:FAILURES
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::Title::( File Manipulation ):: 	
+::Description::( File Manipulation. this is notification ):: 
+::Relevance::( Low ):: 
+::Reference::( search race conditions, file manipulation etc... ):: 
+::Match::#newOutputStream|createFile|createTempFile|\.write|InputStreamReader#:: 
+
+::Title::( Possible Command injection ):: 	
+::Description::( Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. ):: 
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Command_injection_in_Java ):: 
+::Match::#\.system|\.exec|<spring:eval expression=\".*\$\{.*\}#:: 
+
+::Title::( Possible XSS 1 )::    
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::
+::Match::#<%=.*[Rr]equest\.#::
+
+::Title::( Possible XSS 2 )::    
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::
+::Match::#response.sendRedirect\s*\(.*[Rr]equest.*\)#::
+
+::Title::( Possible XSS 3 )::    
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29  )::
+::Match::#<c:out.*\$\{param#::
+
+::Title::( template injection )::    
+::Description::( notification possible template injection )::
+::Relevance::( High ):: 
+::Reference::( https://portswigger.net/web-security/server-side-template-injection)::
+::Match::#<spr(ing)?:(message|theme|transform|eval|hasBindErrors|bind|nestedpath)[^\>]+\$\{param#::
+
+::Title::( Show user inputs)::	
+::Description::( notification )::
+::Relevance::( Low ):: 
+::Reference::( investigate inputs )::
+::Match::#getParameter|getParameterNames|getParameterValues|getParameterMap|getQueryString|getHeader|getHeader|getHeaderNames|getRequestURI|getRequestURL|getCookies|getRequestedSessionId|getInputStream|getReader|getMethod|getProtocol|getServerName|getRemoteUser|getUserPrincipal|HTTPCookie|HttpServletRequest|HttpServletResponse|HttpsURLConnection|addHeader#::
+
+::Title::( SQL query)::	
+::Description::( notification SQL query )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/Preventing_SQL_Injection_in_Java )::
+::Match::#createStatement|executeQuery|jdbc:.*|createQuery#::
+
+::Title::( Logic fail )::	
+::Description::(Possible logic bug that could lead to security bugs. Assigning a static string to a variable in an if condition is not normal and is likely a mistake. )::
+::Relevance::( High ):: 
+::Reference::( https://en.wikipedia.org/wiki/Logic_error)::
+::Match::#if\s?\(\s?\$.*\s?(?<!\!)=\s?('|").*('|")\s?\)#::
+
+::Title::( Detect insecure communication )::   
+::Description::( Communication without TLS )::
+::Relevance::( High ):: 
+::Reference::( Insecure communication  )::
+::Match::#ftp:|http:|smtp:|amqp:|tcp:|udp:|raw sock|socket|send|recv|ws:#::
+
+::Title::( Insecure random )::   
+::Description::( Detection of insecure random )::
+::Relevance::( Low ):: 
+::Reference::( https://owasp.org/www-community/vulnerabilities/Insecure_Randomness )::
+::Match::#new\s*(Secure)?Random\s*\(|java.util.Random#::
+
+::Title::( Open redirect )::    
+::Description::( Lack of validation in redirect resource )::
+::Relevance::( High ):: 
+::Reference::( https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html )::
+::Match::#response.sendRedirect\s*\(.*([Rr]eq(uest)?|\.[Gg]et[Pp]aram).*\)#::
+
+::Title::( Open redirect 2)::    
+::Description::( Lack of validation in redirect resource )::
+::Relevance::( High ):: 
+::Reference::( https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html )::
+::Match::#response.sendRedirect\s*\(.*[Rr]equest.*\)#::
+
+::Title::( Open redirect 3)::    
+::Description::( Lack of validation in redirect resource )::
+::Relevance::( High ):: 
+::Reference::( https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html )::
+::Match::#response.sendRedirect\s*\(.*(Request|request).*\)#::
+
+::Title::( Spring route)::    
+::Description::( just a simple route http )::
+::Relevance::( Low ):: 
+::Reference::( spring framework route definition )::
+::Match::#\@RequestMapping#::

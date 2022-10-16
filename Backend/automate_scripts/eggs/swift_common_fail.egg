@@ -1,0 +1,76 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::EGG:COMMON:SWIFT:FAILURES
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::Title::( Deprecated symbols ):: 	
+::Description::( Very old function can be deprecated ):: 
+::Relevance::( Low ):: 
+::Reference::( https://developer.apple.com/documentation/uikit/deprecated_symbols ):: 
+::Match::#UIActionSheet|UIAlertView|UIDocumentMenuViewController|UILocalNotification|UIMutableUserNotificationAction|UIMutableUserNotificationCategory|UIPopoverController|UISearchDisplayController|UIStoryboardPopoverSegue|UIUserNotificationAction|UIUserNotificationCategory|UIUserNotificationSettings|UIAccelerometerDelegate|UIActionSheetDelegate|UIAlertViewDelegate|UIPopoverControllerDelegate|UISearchDisplayDelegate#:: 
+
+::Title::( SQL query)::	
+::Description::( notification SQL query )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/Preventing_SQL_Injection )::
+::Match::#sqlite|prepare|WHERE|INSERT|SELECT|DELETE|UPDATE|ORDER|createStatement|executeQuery#::
+
+::Title::( Weak encription)::	
+::Description::( weak encription )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/Testing_for_Weak_Encryption_(OTG-CRYPST-004) )::
+::Match::#encode64|md5|MD5|MD4|RC4|RC2|DES|Blowfish|SHA-1|kCCAlgorithmAES|CBC|kCCOptionECBMode#::
+
+::Title::( Information Leak)::	
+::Description::( Information  leak )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org )::
+::Match::#senha|password|passwd|pass|secret|token|key|chave|version|\.pdf|\.doc|\.zip|\.xls#::
+
+::Title::( Jailbreak detection)::	
+::Description::( Source code with jailbreak detection )::
+::Relevance::( Low ):: 
+::Reference::( https://en.wikipedia.org/wiki/IOS_jailbreaking )::
+::Match::#cydia|MobileSubstrate\.dylib|Icy\.app|SBSettings\.app|\/usr\/libexec\/ssh|cycript|frida#::
+
+::Title::( Cert Pinning detected  )::	
+::Description::( Source code with possible cert pinning )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning )::
+::Match::#kTSKPinnedDomains|TSKPinningValidator|TrustKit|pinCertificates|validateCertificateChain|SecTrustCopyResult|setupCertificatePinner|SecTrustSetAnchorCertificates|CertificatePinner#::
+
+::Title::( Detect insecure communication )::   
+::Description::( Communication without TLS )::
+::Relevance::( High ):: 
+::Reference::( Insecure communication  )::
+::Match::#ftp:|http:|smtp:|amqp:|tcp:|udp:|raw sock|socket|send|recv|ws:#::
+
+::Title::( Allow non TLS communication ):: 	
+::Description::( Functions to allow non https communication ):: 
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/ ):: 
+::Match::#allowedInsecureSchemes|allowLocalhostRequest|GTM_ALLOW_INSECURE_REQUESTS|TLSMinimumSupportedProtocolVersion#:: 
+
+::Title::( Allow self signed certs ):: 	
+::Description::( Functions to allow self signed certs ):: 
+::Relevance::( High ):: 
+::Reference::( https://github.com/OWASP/owasp-mastg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md  ):: 
+::Match::#canAuthenticateAgainstProtectionSpace|continueWithoutCredentialForAuthenticationChallenge|kCFStreamSSLAllowsExpiredCertificates|kCFStreamSSLAllowsAnyRoot|kCFStreamSSLAllowsExpiredRoots|validatesSecureCertificate\s*=\s*(no|NO)|allowInvalidCertificates\s*=\s*(YES|yes)|setAllowsAnyHTTPSCertificate:\s*YES|allowsAnyHTTPSCertificateForHost|loadingUnvalidatedHTTPSPage\s*=\s*(YES|yes)#::
+
+::Title::( Lack of data protection ):: 	
+::Description::( The trace of possible vulnerable functions that not use proper memory protections resources ):: 
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/ ):: 
+::Match::#NSFileProtectionNone|noFileProtection|withUnsafeBytes|UIPasteboardChangedNotification|generalPasteboard|UIPasteboard|NSHTTPCookieStorage|sharedHTTPCookieStorage|NSHTTPCookieStorage#::
+
+::Title::( Information leak)::	
+::Description::( Source code uses file system with improper permissions resources )::
+::Relevance::( Low ):: 
+::Reference::( https://github.com/OWASP/owasp-mastg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md )::
+::Match::#NSTemporaryDirectory|kSecAttrAccessibleWhenUnlocked|kSecAttrAccessibleAfterFirstUnlock|SecItemAdd|SecItemUpdate|NSDataWritingFileProtectionComplete|NSLog|Logging|NSAssert#::
+
+::Title::( Trace Webview use)::	
+::Description::( Source code uses Webview resources this can be dangerous )::
+::Relevance::( Low ):: 
+::Reference::( https://github.com/OWASP/owasp-mastg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md )::
+::Match::#loadHTMLString|WebView|loadRequest#::
+
+

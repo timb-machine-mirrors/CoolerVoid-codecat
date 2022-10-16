@@ -44,6 +44,10 @@ def find_extension_by_lang(lang):
         lang="js"     
     if "python" in lang:
         lang="py"
+    if "all_langs" in lang:
+        lang="*"
+    if "csharp" in lang:
+        lang="cs"
     return lang
 
 def list_table_cache():
@@ -109,7 +113,7 @@ def search_sinks(directory, extension,sink):
         risk="Warning"
     for dirpath, dirnames, files in os.walk(directory):
         for name in files:
-            if extension and name.lower().endswith(extension):
+            if (extension and name.lower().endswith(extension)) or ("*" in extension ) :
                 current_path=os.path.join(dirpath, name)
                 Rules.to_dict = Rules.to_dict
                 try:

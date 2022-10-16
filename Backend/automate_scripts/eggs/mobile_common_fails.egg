@@ -1,0 +1,100 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::EGG:COMMON:mobile:FAILURES
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::Title::( Use of anti-jailbreak ):: 	
+::Description::( Jailbreak detection enable sink ):: 
+::Relevance::( Low ):: 
+::Reference::( Detect root resource ):: 
+::Match::#JailbreakDetection|isJailbroken|isRooted|Root\.exec|cydia#:: 
+
+::Title::( Cert pinning detect):: 	
+::Description::( detect cert pinning resource ):: 
+::Relevance::( Low ):: 
+::Reference::( Cert pinning resource ):: 
+::Match::#TrustedCertificatesByte|SecurityContext|PiningSslData|SslPinningPlugin#:: 
+
+::Title::( Sinks of obfuscation )::	
+::Description::( notification  )::
+::Relevance::( Low ):: 
+::Reference::( sink of resource anti tampering )::
+::Match::# proguard|obfuscate|minifyEnabled|promon|arxan|appdome #::
+
+::Title::( SQL sink )::	
+::Description::( SQL sink )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#DROP|WHERE|FROM|SELECT|UPDATE|UNION|DELETE|INSERT|sqlite|oracle#::
+
+::Title::( Logic fail )::	
+::Description::(Possible logic bug that could lead to security bugs. Assigning a static string to a variable in an if condition is not normal and is likely a mistake. )::
+::Relevance::( High ):: 
+::Reference::( https://en.wikipedia.org/wiki/Logic_error)::
+::Match::# if\s?\(\s?\$.*\s?(?<!\!)=\s?('|").*('|")\s?\) #::
+
+::Title::( Weak encription):: 
+::Description::( weak encription )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/Testing_for_Weak_Encryption_(OTG-CRYPST-004) )::
+::Match::#encode64|md5|MD5|MD4|MD2|RC4|RC2|DES|Blowfish|SHA-1|ECB|CBC#::
+
+::Title::( Information Leak):: 
+::Description::( Information  leak )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org )::
+::Match::#senha|password|passwd|pass|secret|token|key|chave|version|\.pdf|\.doc|\.zip|\.xls#::
+
+::Title::( Secure storage )::	
+::Description::( Sink of safe storage )::
+::Relevance::( Low ):: 
+::Reference::( safe storage  )::
+::Match::#flutter_secure_storage|encryptedShared|FlutterSecureStorage#::
+
+::Title::( Detect insecure communication )::	
+::Description::( Communication without TLS )::
+::Relevance::( High ):: 
+::Reference::( Insecure communication  )::
+::Match::#ftp:|http:|smtp:|amqp:|tcp:|udp:|raw sock|socket|send|recv|ws:#::
+
+::Title::( Check SDK version )::	
+::Description::( Detect version of SDK )::
+::Relevance::( Low ):: 
+::Reference::( information disclosure  )::
+::Match::#minSdkVersion#::
+
+::Title::( Insecure RNG context )::	
+::Description::( Detect use of insecure random )::
+::Relevance::( Low ):: 
+::Reference::( insecure random  )::
+::Match::#Random\..*\(.*\)|Random\(.*\)|\(.*\).random\(\)|java\.util\.Random#::
+
+::Title::( Webview detect )::	
+::Description::( Detect use of webview resources )::
+::Relevance::( Low ):: 
+::Reference::( insecure render of http context  )::
+::Match::#WebView|webkit|\.loadUrl|setJavaScriptEnabled|addJavascriptInterface|setWebContentsDebuggingEnabled|JavascriptChannels#::
+
+::Title::( Sink deserialization )::    
+::Description::( Check if exist lack of safe deserialization )::
+::Relevance::( High ):: 
+::Reference::( https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html )::
+::Match::#\.fasterxml\.jackson\.databind\.ObjectMapper|\.enableDefaultTyping|\.fasterxml\.jackson#::
+
+::Title::( Allow self signed certs and insecure connections ):: 	
+::Description::( Functions to allow self signed certs ):: 
+::Relevance::( High ):: 
+::Reference::( https://github.com/OWASP/owasp-mastg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md  ):: 
+::Match::#TrustAllSSLSocket-Factory|AllTrustSSLSocketFactory|NonValidatingSSLSocketFactory|net\.SSLCertificateSocketFactory|ALLOW_ALL_HOSTNAME_VERIFIER|\.setDefaultHostnameVerifier|NullHostnameVerifier|badCertificateCallback#::
+
+::Title::( Lack of clipboard protection ):: 	
+::Description::( Malware can use buffer to read to replace data ):: 
+::Relevance::( High ):: 
+::Reference::( https://github.com/OWASP/owasp-mastg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md  ):: 
+::Match::#ClipboardManager|CLIPBOARD_SERVICE|MODE_WORLD_WRITABLE#::
+
+::Title::( Improper dex load ):: 	
+::Description::( Improper use of dex context ):: 
+::Relevance::( High ):: 
+::Reference::( https://github.com/OWASP/owasp-mastg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md  ):: 
+::Match::#dalvik\.system\.PathClassLoader|dalvik\.system\.DexFile|dalvik\.system\.DexPathList|dalvik\.system\.DexClassLoader|java\.security\.ClassLoader|java\.net\.URLClassLoader|java\.security\.SecureClassLoader|loadDex|loadClass|DexClassLoader|loadDexFile|dalvik\.system\.PathClassLoader|dalvik\.system\.DexFile|dalvik\.system\.DexPathList|dalvik\.system\.DexClassLoader|java\.security\.ClassLoader|java\.net\.URLClassLoader|java\.security\.SecureClassLoader#::
+
+

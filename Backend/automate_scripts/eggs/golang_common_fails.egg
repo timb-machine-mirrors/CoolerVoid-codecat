@@ -1,0 +1,140 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::EGG:COMMON:GOLANG:FAILURES  
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
+
+::Title::( File Manipulation )::     
+::Description::( File Manipulation this is notification )::   
+::Relevance::( Low )::   
+::Reference::( search race conditions, file manipulation etc... )::   
+::Match::#OpenTextFile|WriteLine|GetFileName|CreateTextFile|Mkdir|WriteFile|Chmod|OpenFile|FileMode|\Wos\.\W0[0-7][0-7](1|2|3|5|6|7)\W.{0,99}#::   
+
+::Title::( Set ermissions action )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search permissions pitfalls and finds )::  
+::Match::#(Chmod|FileMode|\Wos\.)\W0[0-7][0-7][1-7]\W.{0,99}$#::  
+
+::Title::( Possible Command injection )::    
+::Description::( Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. )::   
+::Relevance::( High )::   
+::Reference::( https://www.owasp.org/index.php/Command_Injection )::   
+::Match::#WScript\.Shell|\.Exec|\.run \"|\Wos\..{0,99}$|\Wexec\..{0,99}(/c|-c).{0,99}$#::   
+
+::Title::( Possible XSS )::      
+::Description::( notification at possible XSS )::  
+::Relevance::( High )::   
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::  
+::Match::#response\.write|io\.WriteString\W.{0,99}$#::  
+
+::Title::( SHow inputs like get/post/cookies etc... )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#request\.querystring|request\.form|Response\.Cookies|Request\.Cookies|Session#::  
+
+::Title::( Sinks of DBMS communication 1 )::    
+::Description::( notification DBMS communication )::  
+::Relevance::( Low )::   
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::  
+::Match::#ADODB\.recordset|ADODB\.Connection|ADODB\.command|WHERE|FROM|SELECT|UPDATE|UNION|DELETE|INSERT#::  
+
+::Title::( Logic fail )::    
+::Description::(Possible logic bug that could lead to security bugs. Assigning a static string to a variable in an if condition is not normal and is likely a mistake. )::  
+::Relevance::( High )::   
+::Reference::( https://en.wikipedia.org/wiki/Logic_error)::  
+::Match::#if\s?\(\s?\$.*\s?(?<!\!)=\s?('|").*('|\")\s?\)#::  
+
+::Title::( Http finds )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search inputs )::  
+::Match::#\Whttp\.(Client|Get|Post|PostForm|NewRequest)\W.{0,99}$|\Whttp\.(ListenAndServe|Handle|HandleFunc|Server)\W.{0,99}$#::
+
+::Title::( SHow inputs of cookies and headers in HTTP context )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( finds http )::  
+::Match::#\Whttp\.Header\W.{0,99}$|\Whttp\.(Cookie|SetCookie)\W.{0,99}$|\Whttp\.(Client|Get|Post|PostForm|NewRequest)\W.{0,99}$#::  
+
+::Title::( Misconfiguration )::    
+::Description::( Finds of misconfiguration )::  
+::Relevance::( Low )::   
+::Reference::( Misconfiguration detect)::  
+::Match::#\WInsecureIgnoreHostKey.{0,99}$|\Wunsafe\W.{0,99}$|\Wreflect\..{0,99}$'#::  
+
+::Title::( Communication sockets )::    
+::Description::( communication sinks like sockets )::  
+::Relevance::( Low )::   
+::Reference::( Sockes finds)::  
+::Match::#\Whttp\.(ListenAndServe|Handle|HandleFunc|Server)\W.{0,99}$|sock|send|recv|stream#::  
+
+::Title::( Detect insecure communication )::   
+::Description::( Communication without TLS )::
+::Relevance::( High ):: 
+::Reference::( Insecure communication  )::
+::Match::#ftp:|http:|smtp:|amqp:|tcp:|udp:|raw sock|socket|send|recv|ws:#::
+
+::Title::( Format string sink 01 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.WriteString\(.*URL\.Query\(\).*\)#::  
+
+::Title::( Format string sink 02 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.Write\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 03 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.Println\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 04 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.Raw\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 05 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.Query\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 06 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.QueryContext\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 07 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.QueryRow\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 08 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.QueryRowContext\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 09 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.Exec\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 10 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.ExecContext\(.*URL.Query\(\).*\)#::  
+
+::Title::( Format string sink 11 )::      
+::Description::( notification input here )::  
+::Relevance::( Low )::   
+::Reference::( search SQLi,XSS etc... )::  
+::Match::#\.Open\(.*URL.Query\(\).*\)#::  

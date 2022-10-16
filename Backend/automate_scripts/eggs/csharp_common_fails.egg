@@ -1,0 +1,218 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::EGG:COMMON:C:sharp:FAILURES
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::Title::( Possible XSS )::	
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::
+::Match::#response\.write|Response\.Write|[Rr]esponse.[Ww]rite\s*\(#::
+
+::Title::( Possible XSS 2 )::    
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::
+::Match::#<%\s*=\s*[\_a-zA-Z0-9][^\%]+#::
+
+::Title::( Possible XSS 3 )::    
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::
+::Match::#innerText\s*=[^\;]+\+#::
+
+::Title::( Possible XSS 4 )::    
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::
+::Match::#innerHTML\s*=[^\;]+\+#::
+
+::Title::( Possible XSS 5 )::    
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::
+::Match::#[Vv]alidate[Rr]equest=[\'\"]?false[\'\"]?#::
+
+::Title::( Possible XSS 6 )::    
+::Description::( notification at possible XSS )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29 )::
+::Match::#<%=\s*[Rr]equest\.[Qq]uery[Ss]tring\[.*%>#::
+
+::Title::( Sinks of SQL action 1 )::	
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#exec\s*sp_executesql#::
+
+::Title::( Sinks of SQL action 2 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#execute\s*sp_executesql#::
+
+::Title::( Sinks of SQL action 3 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#exec\s*sp_.*#::
+
+::Title::( Sinks of SQL action 4 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#execute\s*sp_.*#::
+
+::Title::( Sinks of SQL action 5 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#exec\s*xp_.*#::
+
+::Title::( Sinks of SQL action 6 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#execute\s*sp_.*|SqlCo(mmand|nnection).*\=#::
+
+::Title::( Sinks of SQL action 7 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#exec\s*@#::
+
+::Title::( Sinks of SQL action 8 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#execute\s*@#::
+
+::Title::( Sinks of SQL action 9 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#executestatement\s*\(#::
+
+::Title::( Sinks of SQL action 10 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#executeSQL\s*\(#::
+
+::Title::( Sinks of SQL action 11 )::   
+::Description::( notification DBMS communication)::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#executeQuery\s*\(|GetDbConnection#::
+
+::Title::( Possible SQL injection 2)::  
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#[\'\"][Ss][Ee][Ll][Ee][Cc][Tt]\s+.*(\{[0-9]+\}|[\'\"]\s+\+)#::
+
+::Title::( Possible SQL injection 3)::  
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#(WHERE|where)\s+[^\;]+=.*(\{[0-9]+\}|[\'\"]\s+\+)#::
+
+::Title::( Possible SQL injection 4)::  
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#[\'\" ]+AND\s+.*=.*(\{[0-9]+\}|[\'\"]\s+\+)#::
+
+::Title::( Possible SQL injection 5)::  
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#(LIKE|like)\s+[^\(\)\;]+(\{[0-9]+\}|[\'\"]\s+\+)#::
+
+::Title::( Possible SQL injection 6)::  
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#(ORDER|order)\s+(BY|by)\s+.*(\{[0-9]+\}|[\'\"]\s+\+)#::
+
+::Title::( Possible SQL injection 7)::  
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#(LIMIT|limit)\s+.*(\{[0-9]+\}|[\'\"]\s+\+)#::
+
+::Title::( Possible SQL injection 8)::  
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#(UPDATE|update)\s+[^\;]+=.*(\{[0-9]+\}|[\'\"]\s+\+)#::
+
+::Title::( Possible SQL injection 9)::  
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/SQL_Injection )::
+::Match::#(INSERT|insert)\s+[^\;]+=.*(\{[0-9]+\}|[\'\"]\s+\+)#::
+
+::Title::( Logic fail )::	
+::Description::(Possible logic bug that could lead to security bugs. Assigning a static string to a variable in an if condition is not normal and is likely a mistake. )::
+::Relevance::( High ):: 
+::Reference::( https://en.wikipedia.org/wiki/Logic_error)::
+::Match::#if\s?\(\s?\$.*\s?(?<!\!)=\s?('|").*('|")\s?\)#::
+
+::Title::( Possible Buffer overflow )::	
+::Description::( notification possible SQL injection )::
+::Relevance::( High ):: 
+::Reference::( http://stackoverflow.com/questions/9343665/are-buffer-overflow-exploits-possible-in-c )::
+::Match::#unsafe|strcpy|strcat#::
+
+::Title::( Dangerous permissions)::	
+::Description::( notification possible permission problem)::
+::Relevance::( Medium ):: 
+::Reference::( http://stackoverflow.com/questions/9343665/are-buffer-overflow-exploits-possible-in-c )::
+::Match::#UnmanagedCode|MemberAccess|SerializationFormatter|SkipVerification|ControlEvidence|ControlPolicy|ControlAppDomain|ControlDomainPolicy|SuppressUnmanaged|CodeSecurityAttribute|SecurityPermission#::
+
+::Title::( weak encryption )::	
+::Description::( weak encryption )::
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Guide_to_Cryptography )::
+::Match::#ToBase64|encode64|MD4|md4|md5|MD5|SHA1|sha1|sha-1|SHA-1|SHA-0|sha-0|sha0|DES|des\.|RNGCryptoServiceProvider#::
+
+::Title::( salt, passwords informations )::	
+::Description::( salt, passwords, keys hardcoded etc.. )::
+::Relevance::( Low ):: 
+::Reference::( https://www.owasp.org/index.php/Guide_to_Cryptography )::
+::Match::#password|pass|senha|clave|login|key|salt|Salt|hash|kennwort|schlüssel|contraseña|random|rand|RNG|rng|crypto|Crypto#::
+
+::Title::( Detect insecure communication )::   
+::Description::( Communication without TLS )::
+::Relevance::( High ):: 
+::Reference::( Insecure communication  )::
+::Match::#ftp:|http:|smtp:|amqp:|tcp:|udp:|raw sock|socket|send|recv|ws:#::
+
+::Title::( Sinks of File Manipulation )::  
+::Description::( File Manipulation. this is notification ):: 
+::Relevance::( Low ):: 
+::Reference::( search race conditions, file manipulation etc... ):: 
+::Match::#FileStream|FileMode|FileAccess|GetDirectoryName|StreamReader|System\.IO#:: 
+
+::Title::( Sinks of Command injection )::  
+::Description::( Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. ):: 
+::Relevance::( High ):: 
+::Reference::( https://www.owasp.org/index.php/Command_Injection ):: 
+::Match::#UseShellExecute|StandardOutput#:: 
+
+::Title::( Sinks of inputs like get/post/cookies etc... )::    
+::Description::( notification input here )::
+::Relevance::( Low ):: 
+::Reference::( search SQLi,XSS etc... )::
+::Match::#request\.querystring|request\.form|Response\.Cookies|Request\.Cookies|Session|ReadLine|TextBox|Response|Request\.Form|HttpGet|HttpPost|HttpDelete|HttpPatch#::
+
+::Title::( Open redirect )::    
+::Description::( Lack of validation in redirect resource )::
+::Relevance::( High ):: 
+::Reference::( https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html )::
+::Match::#[Rr]edirect\s*\(,*\,\s*[Ff][Aa][Ll][Ss][Ee]\s*\)|Response\.Redirect#::
+
+::Title::( Insecure deserialization )::    
+::Description::( Lack of safe deserialization )::
+::Relevance::( High ):: 
+::Reference::( https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html )::
+::Match::#AllowInsecureDeserialization.*true|Serialization|SerializationFormatter|Serializable|SerializeObject|SerializationBinder|JsonSerializer|JsonSerializerSettings|DeserializeObject|ISerializable#::

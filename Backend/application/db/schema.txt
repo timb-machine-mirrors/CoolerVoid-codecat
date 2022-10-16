@@ -22,7 +22,6 @@ CREATE TABLE rules (
 	created_at TIMESTAMP, 
 	update_at TIMESTAMP, 
 	PRIMARY KEY (id), 
-	UNIQUE (title)
 );
 CREATE TABLE cache (
 	id INTEGER NOT NULL, 
