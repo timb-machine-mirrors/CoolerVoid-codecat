@@ -1,5 +1,10 @@
 #!/usr/bin/env python
-import re
+# anti REDOS library https://github.com/google/re2
+try:
+    import re2 as re
+except ImportError:
+    import re
+
 import os
 from flask import current_app as app
 from flask import Flask, abort, request, jsonify, g, url_for
@@ -81,9 +86,9 @@ def test_match_regex(filepath,regex1,regex2):
        match_lines=" "
        for line in fp:
            try:
-               if re.search(regex1, line, re.M|re.I):
+               if re.search(regex1, line): #, re.M|re.I):
                    if len(regex2) > 1:
-                       if re.search(regex2, line, re.M|re.I):
+                       if re.search(regex2, line): # re.M|re.I):
                            match_lines+=str(cnt)+","
                    else:
                        match_lines+=str(cnt)+","

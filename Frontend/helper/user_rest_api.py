@@ -2,6 +2,7 @@ import json
 import requests
 import warnings
 import yaml
+import re
 warnings.simplefilter("ignore") 
 
 
@@ -57,7 +58,11 @@ class rest_call:
 
 
   def Return_User_by_ID(self,user_id):
-    url=self.host+"/api/users/view/"+user_id
+    if(re.search("^[0-9]*", user_id)):
+        valided_id=user_id
+    else:
+        valided_id=0
+    url=self.host+"/api/users/view/"+valided_id
     try:
         r = requests.get(url, verify=False,headers={'Accept' :'application/json, text/plain, */*','Authorization': 'Bearer {}'.format(self.token)}) 
         if r.status_code == 200:

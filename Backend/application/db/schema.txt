@@ -1,7 +1,7 @@
 CREATE TABLE userronin (
 	id INTEGER NOT NULL, 
 	login VARCHAR(30), 
-	passhash VARCHAR(128), 
+	passhash VARCHAR(1024), 
 	mail VARCHAR(128), 
 	last_ip VARCHAR(40), 
 	owner VARCHAR(12), 

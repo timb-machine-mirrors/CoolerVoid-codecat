@@ -9,3 +9,5 @@ passlib==1.7.1
 Werkzeug
 SQLAlchemy<1.4.0
 pycryptodome
+pynacl
+google-re2

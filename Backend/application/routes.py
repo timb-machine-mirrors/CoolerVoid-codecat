@@ -8,6 +8,7 @@ from . import rule_controller
 from . import engine_controller
 from time import gmtime, strftime
 import datetime
+# custom basic auth with hmac(chacha20) 
 from flask_httpauth import HTTPTokenAuth,HTTPBasicAuth,MultiAuth
 
 @app.route('/health')

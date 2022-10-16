@@ -6,6 +6,8 @@ from .user_model import db, User
 from time import gmtime, strftime
 import datetime
 from sqlalchemy import exc
+from helper import crypt_schema
+
 
 def get_header_token():
     header_in=str(request.headers['Authorization'])
@@ -98,7 +100,6 @@ def new_user():
 def get_auth_token():
     token = g.user.generate_auth_token(60000)
     return jsonify({'token': token.decode('ascii'), 'duration': 60000})
-
 
 def List_table_users():
     is_admin() 
