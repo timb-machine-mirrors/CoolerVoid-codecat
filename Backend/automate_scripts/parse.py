@@ -23,25 +23,25 @@ def parse_egg(input,database_local,lang):
  matchs = 0
 
  for line in Lines:
-     test=re.search('::Title::\((.+?)\)::', line)
-     if test:
-      title = test.group(1)
+     test1=re.search('::Title::\((.+?)\)::', line)
+     if test1:
+      title = test1.group(1)
  
-     test=re.search('::Description::\((.+?)\)::', line)
-     if test:
-      description = test.group(1)
+     test2=re.search('::Description::\((.+?)\)::', line)
+     if test2:
+      description = test2.group(1)
  
-     test=re.search('::Relevance::\((.+?)\)::', line)
-     if test:
-      relevance = test.group(1)
+     test3=re.search('::Relevance::\((.+?)\)::', line)
+     if test3:
+      relevance = test3.group(1)
  
-     test=re.search('::Reference::\((.+?)\)::', line)
-     if test:
-      reference = test.group(1)
+     test4=re.search('::Reference::\((.+?)\)::', line)
+     if test4:
+      reference = test4.group(1)
  
-     test=re.search('::Match::\#(.+?)\#::', line)
-     if test:
-      matchs = test.group(1)
+     test5=re.search('::Match::#(.+?)#::', line)
+     if test5:
+      matchs = test5.group(1)
 
      if description and reference and relevance and matchs and title:
          content=description+"\n"+reference+"\n"
@@ -50,6 +50,8 @@ def parse_egg(input,database_local,lang):
          title=0 
          description=0
          reference=0
+         matchs=0
+         relevance=0
 
 # print(mylist)
  insert_eggs(database_local,mylist)
